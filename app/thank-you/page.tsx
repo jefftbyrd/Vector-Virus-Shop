@@ -1,6 +1,3 @@
-// import Link from 'next/link';
-// import { getVirusesInsecure } from '../../database/viruses';
-
 export const metadata = {
   title: 'Thank you!',
   description: 'All your favorites in one place!',

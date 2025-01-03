@@ -31,16 +31,6 @@ export default async function NewArrivals() {
                 >
                   <Link className="virusItem" href={`/viruses/${virus.id}`}>
                     <img src={`viruses/${virus.image}`} />
-                    {/* <Image
-                  src={`/viruses/${virus.image}`}
-                  fill={true}
-                  style={{
-                    objectFit: 'contain',
-                    verticalAlign: 'top',
-                    top: '0',
-                    margin: 'auto',
-                  }}
-                /> */}
                     <h2>{virus.virusName}</h2>
                     <div className="itemPrice">
                       € {Number(virus.price).toFixed(2)}
