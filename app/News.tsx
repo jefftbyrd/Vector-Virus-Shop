@@ -6,7 +6,6 @@ export default function News() {
     <div className="subGrid">
       <div className="inside">
         <div className="news">
-          {/* <h2>News</h2> */}
           <div className="newsItems">
             <a href="/">
               <div className="item">
