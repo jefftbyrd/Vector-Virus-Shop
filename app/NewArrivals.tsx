@@ -4,15 +4,6 @@ import { getVirusesInsecure } from '../database/viruses';
 export default async function NewArrivals() {
   const viruses = await getVirusesInsecure();
 
-  const newVirusesFour = viruses
-    .filter((virus) => {
-      if (virus.new !== '1') {
-        return null;
-      }
-      return virus;
-    })
-    .splice(0, 4);
-
   const newViruses = viruses.filter((virus) => {
     if (virus.new !== '1') {
       return null;
