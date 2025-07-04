@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+// import { notFound } from 'next/navigation';
 import React from 'react';
 import { getVirusesInsecure } from '../../database/viruses';
 import { getCookie } from '../../util/cookies';
