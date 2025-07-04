@@ -65,18 +65,7 @@ export async function updateCartQuantity(
   (await cookies()).set('cart', JSON.stringify(cart));
 }
 
-// export async function CartTotal(props: Props) {
-//   const cartTotalAmount: number = await props.virusesInCart.reduce(
-//     (acc: number, virus: { price: number; quantity: number }) => {
-//       return (acc += Number(virus.price) * virus.quantity);
-//     },
-//     0,
-//   );
-//   return cartTotalAmount;
-// }
-
 export async function CartTotal(props: CartTotalProps): Promise<number> {
-  // export async function CartTotal(props: Props) {
   return await props.virusesInCart.reduce((acc: number, virus: CartItem) => {
     return (acc += Number(virus.price) * virus.quantity);
   }, 0);
