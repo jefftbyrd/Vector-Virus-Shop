@@ -10,6 +10,7 @@ interface PageProps {
 
 interface PageParams {
   virusId: string;
+  [key: string]: string | string[] | undefined;
 }
 
 interface GenerateMetadataProps {
