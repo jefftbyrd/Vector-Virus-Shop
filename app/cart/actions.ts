@@ -4,21 +4,36 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
+interface CartItem {
+  id: number;
+  price: number;
+  quantity: number;
+}
+
+interface CartTotalProps {
+  virusesInCart: CartItem[];
+}
+
 export async function removeItem(cartItemId: number) {
   // 1. get the cookie
   const cartCookie = await getCookie('cart');
 
   // 2. parse the cookie
-  const cart: { id: number }[] =
+  const cart: CartItem[] =
     cartCookie === undefined ? [] : parseJson(cartCookie);
 
   // 3. edit the cookie value
-  const itemToRemove: any = cart.find((item: { id: number }) => {
+  const itemToRemove: CartItem | undefined = cart.find((item: CartItem) => {
     return item.id === cartItemId;
   });
 
+  // Handle case where item is not found
+  if (!itemToRemove) {
+    return;
+  }
+
   const modifiedCart = cart.filter(
-    (item: { id: number }) => item.id !== itemToRemove.id,
+    (item: CartItem) => item.id !== itemToRemove.id,
   );
 
   (await cookies()).set('cart', JSON.stringify(modifiedCart));
@@ -27,17 +42,23 @@ export async function removeItem(cartItemId: number) {
 export async function updateCartQuantity(
   cartItemId: number,
   cartItemQuantity: number,
-) {
+): Promise<void> {
   // 1. get the cookie
   const cartCookie = await getCookie('cart');
 
   // 2. parse the cookie
-  const cart = cartCookie === undefined ? [] : parseJson(cartCookie);
+  const cart: CartItem[] =
+    cartCookie === undefined ? [] : parseJson(cartCookie);
 
   // 3. edit the cookie value
-  const cartItemToUpdate: any = cart.find((item: any) => {
+  const cartItemToUpdate: CartItem | undefined = cart.find((item: CartItem) => {
     return item.id === cartItemId;
   });
+
+  // Handle case where item is not found
+  if (!cartItemToUpdate) {
+    return;
+  }
 
   cartItemToUpdate.quantity = cartItemQuantity;
 
@@ -71,12 +92,9 @@ export async function updateCartQuantity(
 //   return cartTotalAmount;
 // }
 
-export async function CartTotal(props: any) {
+export async function CartTotal(props: CartTotalProps): Promise<number> {
   // export async function CartTotal(props: Props) {
-  return await props.virusesInCart.reduce(
-    (acc: number, virus: { price: number; quantity: number }) => {
-      return (acc += Number(virus.price) * virus.quantity);
-    },
-    0,
-  );
+  return await props.virusesInCart.reduce((acc: number, virus: CartItem) => {
+    return (acc += Number(virus.price) * virus.quantity);
+  }, 0);
 }
