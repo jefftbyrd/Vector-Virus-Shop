@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import { getVirusesInsecure } from '../../database/viruses';
 
@@ -30,7 +30,7 @@ export default async function NewArrivals() {
                   style={{ position: 'relative' }}
                 >
                   <Link className="virusItem" href={`/viruses/${virus.id}`}>
-                    <img src={`viruses/${virus.image}`} />
+                    <img src={`viruses/${virus.image}`} alt={virus.virusName} />
                     <h2>{virus.virusName}</h2>
                     <div className="itemPrice">
                       € {Number(virus.price).toFixed(2)}
