@@ -65,23 +65,6 @@ export async function updateCartQuantity(
   (await cookies()).set('cart', JSON.stringify(cart));
 }
 
-// type Props = {
-//   virusesInCartList: [
-//     {
-//       id: number;
-//       price: number;
-//       quantity: number;
-//     },
-//   ];
-//   virusesInCart: [
-//     {
-//       id: number;
-//       price: number;
-//       quantity: number;
-//     },
-//   ];
-// };
-
 // export async function CartTotal(props: Props) {
 //   const cartTotalAmount: number = await props.virusesInCart.reduce(
 //     (acc: number, virus: { price: number; quantity: number }) => {
