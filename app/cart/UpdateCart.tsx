@@ -2,22 +2,18 @@
 import { useState } from 'react';
 import { updateCartQuantity } from './actions';
 
-// type Props = {
-//   cartItemId: number;
-//   cartItemQuantity: number;
-// };
+interface UpdateProps {
+  cartItemQuantity: number;
+  cartItemId: number;
+}
 
-// export default function Update(props: Props) {
-export default function Update(props: any) {
+export default function Update(props: UpdateProps) {
   const [quantity, setQuantity] = useState(props.cartItemQuantity);
   return (
     <form>
       <div className="cartQuantity">
         <button
           className="buttonMinus buttonGreen"
-          // onClick={() => setQuantity(quantity - 1)}
-          // formAction={() =>
-          //   updateCartQuantity(props.cartItemId, Number(quantity))
           onClick={() => setQuantity(quantity - 1)}
           formAction={() =>
             updateCartQuantity(props.cartItemId, Number(quantity))
@@ -30,9 +26,8 @@ export default function Update(props: any) {
           value={Number(quantity)}
           type="number"
           min="1"
-          // onChange={(event) => setQuantity(event.currentTarget.value)}
           onChange={(event) => {
-            setQuantity(event.currentTarget.value);
+            setQuantity(Number(event.currentTarget.value));
           }}
         />
         <button
