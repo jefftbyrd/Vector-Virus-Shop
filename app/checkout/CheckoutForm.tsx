@@ -56,11 +56,7 @@ export default function CheckoutForm() {
               required
             />
           </label>
-          <label>
-            Country
-            <Countries />
-          </label>
-          {/* <Countries /> */}
+          <Countries />
           <div className="fitTwo">
             <label>
               City:{' '}
@@ -70,7 +66,7 @@ export default function CheckoutForm() {
               Postal Code:
               <input
                 type="number"
-                maxLength="8"
+                maxLength={8}
                 placeholder="Postal Code"
                 data-test-id="checkout-postal-code"
                 required
@@ -91,7 +87,7 @@ export default function CheckoutForm() {
               inputMode="numeric"
               pattern="[0-9\s]{13,19}"
               autoComplete="cc-number"
-              maxLength="19"
+              maxLength={19}
               placeholder="xxxx xxxx xxxx xxxx"
               required
             />
@@ -113,7 +109,7 @@ export default function CheckoutForm() {
                 // max="999"
                 // min="-999"
                 // pattern="[0-9]"
-                maxLength="3"
+                maxLength={3}
                 placeholder="CVV"
                 data-test-id="checkout-security-code"
                 required
