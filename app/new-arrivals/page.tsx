@@ -11,7 +11,7 @@ export default async function NewArrivals() {
   const viruses = await getVirusesInsecure();
 
   const newViruses = viruses.filter((virus) => {
-    if (virus.new !== '1') {
+    if (!virus.new) {
       return null;
     }
     return virus;
