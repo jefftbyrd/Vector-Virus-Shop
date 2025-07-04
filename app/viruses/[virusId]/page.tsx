@@ -1,44 +1,56 @@
 import { notFound } from 'next/navigation';
 import React from 'react';
-// import type { Virus } from '../../../database/viruses';
+import type { Virus } from '../../../database/viruses';
 import { getVirusInsecure } from '../../../database/viruses';
 import AddToCart from './AddToCart';
 
-// type PropsParams = {
-//   params: {
-//     singleVirus: Virus;
-//     virusId: number;
-//     show: string | null;
-//   };
-// };
+interface PageProps {
+  params: Promise<PageParams>;
+}
 
-// type Props = {
-//   show: string | null;
-//   singleVirus: Virus;
-// };
+interface PageParams {
+  virusId: string;
+}
 
-export async function generateMetadata(props: any) {
-  // export async function generateMetadata(props: PropsParams) {
-  const singleVirus: any = await getVirusInsecure(
-    // const singleVirus: Virus | undefined = await getVirusInsecure(
-    Number((await props.params).virusId),
-  );
+interface GenerateMetadataProps {
+  params: Promise<PageParams>;
+}
+
+interface TaglineProps {
+  show: boolean;
+  singleVirus: Virus;
+}
+
+interface ClassificationProps {
+  show: boolean;
+  singleVirus: Virus;
+}
+
+export async function generateMetadata(props: GenerateMetadataProps) {
+  const params = await props.params;
+  const singleVirus = await getVirusInsecure(Number(params.virusId));
+
+  if (!singleVirus) {
+    return {
+      title: 'Virus Not Found',
+      description: 'The requested virus could not be found',
+    };
+  }
+
   return {
     title: singleVirus.virusName,
-    description: `This is the ${singleVirus.virusName} page `,
+    description: `This is the ${singleVirus.virusName} page`,
   };
 }
 
-function Tagline(props: any) {
-  // function Tagline(props: Props) {
+function Tagline(props: TaglineProps) {
   if (!props.show) {
     return null;
   }
   return <h2>({props.singleVirus.tagline})</h2>;
 }
 
-function Classification(props: any) {
-  // function Classification(props: Props) {
+function Classification(props: ClassificationProps) {
   if (!props.show) {
     return null;
   }
@@ -80,10 +92,10 @@ function Classification(props: any) {
   );
 }
 
-export default async function SingleVirusPage(props: any) {
-  // export default async function SingleVirusPage(props: Props) {
-  const singleVirus: any = await getVirusInsecure(
-    Number((await props.params).virusId),
+export default async function SingleVirusPage(props: PageProps) {
+  const params = await props.params;
+  const singleVirus: Virus | undefined = await getVirusInsecure(
+    Number(params.virusId),
   );
 
   if (!singleVirus) {
@@ -95,17 +107,17 @@ export default async function SingleVirusPage(props: any) {
       <img
         className="bigImage"
         alt={singleVirus.virusName}
-        src={singleVirus.image}
+        src={singleVirus.image ?? undefined}
       />
       <div className="singleVirusPage inside">
         <div className="content">
           <h1>{singleVirus.virusName}</h1>
-          <Tagline show={singleVirus.tagline} singleVirus={singleVirus} />
+          <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
           <div className="virusData">
             <div className="virusDesc">
               <p>{singleVirus.virusDesc}</p>
               <Classification
-                show={singleVirus.realm}
+                show={!!singleVirus.realm}
                 singleVirus={singleVirus}
               />
             </div>
