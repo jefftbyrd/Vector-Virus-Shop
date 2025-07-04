@@ -6,7 +6,7 @@ export default async function Featured() {
   const viruses = await getVirusesInsecure();
 
   const featuredViruses = viruses.filter((virus) => {
-    if (virus.featured !== '1') {
+    if (!virus.featured) {
       return null;
     }
     return virus;
