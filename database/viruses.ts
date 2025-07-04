@@ -9,8 +9,8 @@ export type Virus = {
   price: number;
   tagline: string | null;
   virusDesc: string | null;
-  featured: string | null;
-  new: string | null;
+  featured: boolean | null;
+  new: boolean | null;
   realm: string | null;
   kingdom: string | null;
   phylum: string | null;
