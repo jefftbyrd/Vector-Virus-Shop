@@ -102,7 +102,7 @@ h2 {
 }
 
 .container {
-  display: grid;
+  // display: grid;
   gap: 0px;
   grid-template-areas:
     'header'
@@ -164,6 +164,7 @@ header {
     color: white;
     border-bottom: solid var(--primary);
     border-right: solid var(--primary);
+    @apply h-16;
   }
 
   a h2 {
