@@ -63,7 +63,7 @@ export default async function RootLayout({ children }: Props) {
       <body
         className={`${groteskGras.variable} ${groteskMince.variable} ${groteskRegular.variable} ${ddin.variable} ${ddinBold.variable}`}
       >
-        <div className="container">
+        <div className="w-full">
           <header className="header">
             <Link href="/">
               <h2>Vector</h2>
