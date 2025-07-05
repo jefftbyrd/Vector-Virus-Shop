@@ -97,7 +97,6 @@ export default function CheckoutForm() {
               Expiration Date: (MM/YY){' '}
               <input
                 type="month"
-                // placeholder="MM/YY"
                 data-test-id="checkout-expiration-date"
                 required
               />
@@ -105,10 +104,6 @@ export default function CheckoutForm() {
             <label>
               CVV: (3 digits){' '}
               <input
-                // type="number"
-                // max="999"
-                // min="-999"
-                // pattern="[0-9]"
                 maxLength={3}
                 placeholder="CVV"
                 data-test-id="checkout-security-code"
@@ -123,7 +118,6 @@ export default function CheckoutForm() {
             className="confirmButton"
             data-test-id="checkout-confirm-order"
             formAction={async () => {
-              // 'use server';
               await deleteCookie();
               window.location.href = '/thank-you';
             }}
