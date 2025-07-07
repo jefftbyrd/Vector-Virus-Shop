@@ -1,7 +1,7 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
 import Featured from './Featured';
-import NewArrivals from './NewArrivals';
+// import NewArrivals from './NewArrivals';
 import News from './News';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <Featured />
       <News />
-      <NewArrivals />
+      {/* <NewArrivals /> */}
     </div>
   );
 }
