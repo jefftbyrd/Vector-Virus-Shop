@@ -80,7 +80,7 @@ export default async function RootLayout({ children }: Props) {
                 </span>
               </Link>
               <Link href="/checkout">Checkout</Link>
-              <Link href="/new-arrivals">New Arrivals</Link>
+              {/* <Link href="/new-arrivals">New Arrivals</Link> */}
             </nav>
           </header>
           <main className="content">{children}</main>
