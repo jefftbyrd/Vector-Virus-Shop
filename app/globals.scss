@@ -437,11 +437,12 @@ header {
 .bigImage {
   z-index: -1;
   position: absolute;
-  width: 100vw;
+  // width: 100vw;
   opacity: 0.5;
-  left: 0;
-  top: 0;
-  padding: 0px 50px;
+  // @apply p-10;
+  // left: 0;
+  // top: 0;
+  // padding: 0px 50px;
 }
 
 .singleVirusPage {
