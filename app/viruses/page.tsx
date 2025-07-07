@@ -19,17 +19,17 @@ export default async function Viruses() {
             return (
               <div key={`virusId-${virus.id}`} style={{ position: 'relative' }}>
                 <Link className="virusItem" href={`/viruses/${virus.id}`}>
-                  <img src={`viruses/${virus.image}`} alt={virus.virusName} />
-                  {/* <Image
-                  src={`/viruses/${virus.image}`}
-                  fill={true}
-                  style={{
-                    objectFit: 'contain',
-                    verticalAlign: 'top',
-                    top: '0',
-                    margin: 'auto',
-                  }}
-                /> */}
+                  <div className="relative w-full aspect-square">
+                    <Image
+                      src={`/viruses/${virus.image}`}
+                      alt={virus.virusName}
+                      className="object-cover object-center"
+                      fill
+                      sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
+                      // priority={priority && id <= 2}
+                      quality={75}
+                    />
+                  </div>
                   <h2>{virus.virusName}</h2>
                   {virus.tagline ? <h3>({virus.tagline})</h3> : null}
                   <div className="itemPrice">
