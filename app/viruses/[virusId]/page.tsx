@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import type { Virus } from '../../../database/viruses';
@@ -105,11 +106,23 @@ export default async function SingleVirusPage(props: PageProps) {
 
   return (
     <div className="subGridSingleVirus">
-      <img
+      <div className="w-full aspect-square bigImage">
+        <Image
+          // src={singleVirus.image ?? ''}
+          src={`/viruses/${singleVirus.image}`}
+          alt={singleVirus.virusName}
+          className="object-cover object-center"
+          fill
+          sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
+          // priority={priority && id <= 2}
+          quality={75}
+        />
+      </div>
+      {/* <img
         className="bigImage"
         alt={singleVirus.virusName}
         src={singleVirus.image ?? undefined}
-      />
+      /> */}
       <div className="singleVirusPage inside">
         <div className="content">
           <h1>{singleVirus.virusName}</h1>
