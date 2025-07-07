@@ -14,7 +14,7 @@ export default async function Featured() {
 
   return (
     <div className="featured">
-      <h2>Featured Viruses</h2>
+      <h2 className="">Featured Viruses</h2>
       <div className="featuredGrid">
         {featuredViruses.map((virus) => {
           return (
