@@ -577,9 +577,6 @@ header {
     margin-top: 30px;
   }
 
-  .buy {
-  }
-
   .price {
     text-transform: uppercase;
     font-size: 5.2vw;
@@ -691,12 +688,8 @@ header {
 
 .virusItem {
   border-radius: 30px;
-  /* width: 22vw; */
-  /* width: 30%; */
-  /* flex-basis: auto; */
+  @apply p-5 text-center;
   background-color: #185d4e;
-  padding: 10px;
-  text-align: center;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -706,7 +699,6 @@ header {
   &:hover {
     background-color: lighten(#185d4e, 8);
   }
-  /* transition: var(--hover); */
 
   h2 {
     font-family: var(--font-grotesk-regular);
@@ -720,9 +712,9 @@ header {
     font-weight: 300;
   }
 
-  img {
-    margin: 10px 20px;
-  }
+  // img {
+  //   margin: 10px 20px;
+  // }
 
   .itemPrice {
     font-family: var(--font-chivo);
