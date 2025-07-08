@@ -24,6 +24,10 @@
   --font-chivo: 'Chivo Variable', sans-serif;
 }
 
+.font-grotesk-mince {
+  @apply font-[var(--font-grotesk-mince)];
+}
+
 .buttonBlue {
   transition: background-color 140ms;
   &:hover {
@@ -52,17 +56,17 @@ a {
   text-decoration: none;
 }
 
-html {
-  font-family: var(--font-chivo);
-  // font-family: var(--font-ddin);
-}
+// html {
+//   font-family: var(--font-chivo);
+//   // font-family: var(--font-ddin);
+// }
 
-html,
-body {
-  // font-family: var(--font-ddin);
-  font-family: var(--font-chivo);
-  font-weight: 200;
-}
+// html,
+// body {
+//   // font-family: var(--font-ddin);
+//   font-family: var(--font-chivo);
+//   font-weight: 200;
+// }
 
 body {
   color: white;
@@ -80,8 +84,7 @@ p {
   font-size: 1.35rem;
 }
 
-h1,
-h2 {
+h1 {
   font-family: var(--font-grotesk-gras);
 }
 
@@ -90,11 +93,11 @@ h3 {
   font-family: var(--font-chivo);
 }
 
-h1 {
-  text-transform: uppercase;
-  color: white;
-  font-size: 8rem;
-}
+// h1 {
+//   text-transform: uppercase;
+//   color: white;
+//   font-size: 8rem;
+// }
 
 h2 {
   font-size: 2.8rem;
@@ -194,49 +197,20 @@ header {
 
 /* LANDING PAGE */
 
-.start {
-  img {
-    position: absolute;
-    z-index: 1;
-    top: 16vh;
-    left: 23.6vw;
-    width: 27vw;
-  }
+.giantVector {
+  @apply mt-12 mb-28;
 
-  .text {
-    /* position: absolute; */
-    left: 0px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /* min-height: 24vh; */
-    margin-bottom: 17vh;
-    /* text-shadow: var(--shadow); */
+  img {
+    @apply absolute z-10 top-[16vh] left-[23.6vw] w-[27vw];
   }
 
   h1 {
-    align-self: center;
-    font-size: 26vw;
-    line-height: 12vw;
-    z-index: -1;
-    color: #3acda8;
-    /* color: white; */
-    text-transform: lowercase;
+    @apply justify-self-center lowercase text-[#3acda8] text-[26vw] leading-[12vw] -z-1;
   }
 
   h2 {
     font-family: var(--font-grotesk-mince);
-    font-weight: 100;
-    text-transform: uppercase;
-    font-size: 3.7vw;
-    margin-top: 9vh;
-    text-align: right;
-    position: relative;
-    z-index: -1;
-    right: 18.5vw;
-    color: white;
-    /* color: #3acda8; */
-    /* color: var(--light-blue); */
+    @apply mt-[9vh] text-right relative -translate-x-[18.5vw] text-[3.7vw] text-white -z-10 uppercase font-thin;
   }
 }
 
@@ -564,7 +538,6 @@ header {
   }
 
   h2 {
-    /* color: var(--light-green); */
     color: white;
     font-family: var(--font-chivo);
     letter-spacing: 0.06rem;
