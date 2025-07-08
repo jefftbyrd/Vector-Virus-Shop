@@ -1,8 +1,8 @@
 // import Image from 'next/image';
 // import styles from './page.module.css';
-import Featured from './Featured';
+import Featured from './components/Featured';
 // import NewArrivals from './NewArrivals';
-import News from './News';
+import News from './components/News';
 
 export default function Home() {
   return (
