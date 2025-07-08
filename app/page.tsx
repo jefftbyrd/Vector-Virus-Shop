@@ -6,17 +6,14 @@ import News from './components/News';
 
 export default function Home() {
   return (
-    <div className="homePage">
-      <div className="start">
-        <div className="text">
-          <h1>Vector</h1>
-          <h2>The virus shop</h2>
-        </div>
+    <div className="">
+      <div className="giantVector">
+        <h1>Vector</h1>
+        <h2>The virus shop</h2>
         <img src="viruses/adenovirus-home.webp" alt="Vector, the virus shop" />
       </div>
       <Featured />
       <News />
-      {/* <NewArrivals /> */}
     </div>
   );
 }
