@@ -2,11 +2,10 @@ import './globals.scss';
 import '@fontsource-variable/chivo';
 import localFont from 'next/font/local';
 // import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { ReactNode } from 'react';
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
-import Footer from './footer';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 const groteskGras = localFont({
   src: './fonts/Grotesk-04Gras.woff',
@@ -47,46 +46,16 @@ type Props = {
   children: ReactNode;
 };
 
-export default async function RootLayout({ children }: Props) {
-  const cartCookie = await getCookie('cart');
-  const cartItems: [] = parseJson(cartCookie) || [];
-
-  const totalCartItems: number = cartItems.reduce(
-    (acc: number, item: { quantity: number }) => {
-      return (acc += item.quantity);
-    },
-    0,
-  );
-
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
         className={`${groteskGras.variable} ${groteskMince.variable} ${groteskRegular.variable} ${ddin.variable} ${ddinBold.variable}`}
       >
         <div className="w-full">
-          <header className="header">
-            <Link href="/">
-              <h2>Vector</h2>
-            </Link>
-            <nav>
-              <div>
-                <Link href="/viruses">Viruses</Link>
-              </div>
-              <Link href="/about">About</Link>
-              <Link href="/cart" data-test-id="cart-link">
-                Cart:{' '}
-                <span data-test-id="cart-count">
-                  {`[${totalCartItems ? totalCartItems : 'empty'}]`}
-                </span>
-              </Link>
-              <Link href="/checkout">Checkout</Link>
-              {/* <Link href="/new-arrivals">New Arrivals</Link> */}
-            </nav>
-          </header>
+          <Header />
           <main className="content">{children}</main>
-          <footer className="footer">
-            <Footer />
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>
