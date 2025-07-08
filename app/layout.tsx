@@ -52,9 +52,9 @@ export default function RootLayout({ children }: Props) {
       <body
         className={`${groteskGras.variable} ${groteskMince.variable} ${groteskRegular.variable} ${ddin.variable} ${ddinBold.variable}`}
       >
-        <div className="w-full">
+        <div className="">
           <Header />
-          <main className="content">{children}</main>
+          <main className="">{children}</main>
           <Footer />
         </div>
       </body>
