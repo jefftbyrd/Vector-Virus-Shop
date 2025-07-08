@@ -1,6 +1,6 @@
 // import Image from 'next/image';
 import Link from 'next/link';
-import { getVirusesInsecure } from '../database/viruses';
+import { getVirusesInsecure } from '../../database/viruses';
 
 export default async function Featured() {
   const viruses = await getVirusesInsecure();

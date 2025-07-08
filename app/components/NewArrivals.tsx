@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getVirusesInsecure } from '../database/viruses';
+import { getVirusesInsecure } from '../../database/viruses';
 
 export default async function NewArrivals() {
   const viruses = await getVirusesInsecure();

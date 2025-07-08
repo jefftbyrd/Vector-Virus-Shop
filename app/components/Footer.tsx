@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <>
+    <footer className="footer">
       <div>
         <h3>Navigation</h3>
         <ul>
@@ -46,6 +46,6 @@ export default function Footer() {
           </label>
         </form>
       </div>
-    </>
+    </footer>
   );
 }
