@@ -16,7 +16,9 @@ export default async function Header() {
   return (
     <header>
       <Link href="/">
-        <h2>Vector</h2>
+        <h2 className="lowercase text-[#0e372e] font-grotesk text-[1.6rem] bg-[#3acda8] h-full tracking-[0.3rem] font-black px-5 leading-[3.2rem]">
+          Vector
+        </h2>
       </Link>
       <nav>
         <div>
@@ -30,7 +32,6 @@ export default async function Header() {
           </span>
         </Link>
         <Link href="/checkout">Checkout</Link>
-        {/* <Link href="/new-arrivals">New Arrivals</Link> */}
       </nav>
     </header>
   );
