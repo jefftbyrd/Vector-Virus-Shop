@@ -1,36 +1,40 @@
 import './globals.scss';
 import '@fontsource-variable/chivo';
 import localFont from 'next/font/local';
-// import Image from 'next/image';
-// import Link from 'next/link';
 import { ReactNode } from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-const groteskGras = localFont({
-  src: './fonts/Grotesk-04Gras.woff',
-  variable: '--font-grotesk-gras',
-  weight: '900',
+const grotesk = localFont({
+  src: [
+    {
+      path: './fonts/Grotesk-02Mince.woff',
+      weight: '100',
+    },
+    {
+      path: './fonts/Grotesk-03Regular.woff',
+      weight: '400',
+    },
+    {
+      path: './fonts/Grotesk-04Gras.woff',
+      weight: '900',
+    },
+  ],
+  variable: '--font-grotesk',
 });
-const groteskMince = localFont({
-  src: './fonts/Grotesk-02Mince.woff',
-  variable: '--font-grotesk-mince',
-  weight: '100',
-});
-const groteskRegular = localFont({
-  src: './fonts/Grotesk-03Regular.woff',
-  variable: '--font-grotesk-regular',
-  weight: '400',
-});
+
 const ddin = localFont({
-  src: './fonts/D-DIN.woff',
+  src: [
+    {
+      path: './fonts/D-DIN.woff',
+      weight: '300',
+    },
+    {
+      path: './fonts/D-DIN-Bold.woff',
+      weight: '700',
+    },
+  ],
   variable: '--font-ddin',
-  weight: '300',
-});
-const ddinBold = localFont({
-  src: './fonts/D-DIN-Bold.woff',
-  variable: '--font-ddin-bold',
-  weight: '300',
 });
 
 export const metadata = {
@@ -50,7 +54,10 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
-        className={`${groteskGras.variable} ${groteskMince.variable} ${groteskRegular.variable} ${ddin.variable} ${ddinBold.variable}`}
+        className={`${grotesk.variable} ${ddin.variable}`}
+        // style={{
+        //   fontFamily: 'var(--font-grotesk)', // temporary test
+        // }}
       >
         <div className="">
           <Header />
