@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { getVirusesInsecure } from '../../database/viruses';
 
@@ -14,17 +14,27 @@ export default async function Featured() {
 
   return (
     <div className="featured">
-      <h2 className="">Featured Viruses</h2>
-      <div className="featuredGrid">
+      <h2 className="text-6xl font-ddin text-light-green leading-[2.5vw] ml-15 tracking-wide uppercase">
+        Featured
+      </h2>
+      <div className="grid grid-cols-3 gap-20 px-20 py-6">
         {featuredViruses.map((virus) => {
           return (
-            <div
-              key={`virusId-${virus.id}`}
-              style={{ backgroundImage: `url(viruses/${virus.image})` }}
-              className="featuredItem"
-            >
+            <div key={`virusId-${virus.id}`} className="">
               <Link href={`/viruses/${virus.id}`}>
-                <h3>{virus.virusName}</h3>
+                <div className="relative w-full aspect-square flex items-center justify-center">
+                  <h3 className="z-20 text-white text-[4vw] font-grotesk text-shadow-lg/50">
+                    {virus.virusName}
+                  </h3>
+                  <Image
+                    src={`/viruses/${virus.image}`}
+                    alt={virus.virusName}
+                    className="object-cover object-center absolute inset-0 z-10"
+                    fill
+                    sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
+                    quality={75}
+                  />
+                </div>
               </Link>
             </div>
           );
@@ -33,3 +43,25 @@ export default async function Featured() {
     </div>
   );
 }
+
+// return (
+//     <div className="featured">
+//       <h2 className="">Featured Viruses</h2>
+//       <div className="featuredGrid">
+//         {featuredViruses.map((virus) => {
+//           return (
+//             <div
+//               key={`virusId-${virus.id}`}
+//               style={{ backgroundImage: `url(viruses/${virus.image})` }}
+//               className="featuredItem"
+//             >
+//               <Link href={`/viruses/${virus.id}`}>
+//                 <h3>{virus.virusName}</h3>
+//               </Link>
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
