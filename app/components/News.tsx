@@ -4,7 +4,7 @@
 export default function News() {
   return (
     <>
-      <h2>Latest News</h2>
+      <h2 className="special">Latest News</h2>
       <div className="subGrid">
         <div className="inside">
           <div className="news">
@@ -18,7 +18,7 @@ export default function News() {
                     <span>Tips</span>
                   </div>
                   <div className="itemContent">
-                    <h3>Innovative new techniques for spreading viruses</h3>
+                    <h3>Innovative techniques for spreading viruses</h3>
                   </div>
                 </div>
               </a>
@@ -31,8 +31,8 @@ export default function News() {
                     <span>Trends</span>
                   </div>
                   <div className="itemContent">
-                    <h3>Hot new trend</h3>
-                    <h4>Virus-collecting as a hobby</h4>
+                    <h3>Virus-collecting as a hobby</h3>
+                    {/* <h4>Virus-collecting as a hobby</h4> */}
                   </div>
                 </div>
               </a>
@@ -46,7 +46,7 @@ export default function News() {
                   </div>
                   <div className="itemContent">
                     <h3>How to use our products</h3>
-                    <h4>From education to biological warfare</h4>
+                    {/* <h4>From education to biological warfare</h4> */}
                   </div>
                 </div>
               </a>
@@ -72,8 +72,8 @@ export default function News() {
                     <span>Report</span>
                   </div>
                   <div className="itemContent">
-                    <h3>Ethics report</h3>
-                    <h4>The new virus economy</h4>
+                    <h3>Ethics Report: The new virus economy</h3>
+                    {/* <h4>The new virus economy</h4> */}
                   </div>
                 </div>
               </a>
