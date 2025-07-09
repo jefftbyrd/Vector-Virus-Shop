@@ -13,17 +13,18 @@ export default async function Featured() {
   });
 
   return (
-    <div className="featured">
-      <h2 className="text-6xl font-ddin text-light-green leading-[2.5vw] ml-15 tracking-wide uppercase">
-        Featured
-      </h2>
-      <div className="grid grid-cols-3 gap-20 px-20 py-6">
+    <div className="featured pt-5 pb-10">
+      <h2 className="special">Featured Viruses</h2>
+      <div className="grid grid-cols-3 gap-40 px-40 py-8">
         {featuredViruses.map((virus) => {
           return (
-            <div key={`virusId-${virus.id}`} className="">
+            <div
+              key={`virusId-${virus.id}`}
+              className="opacity-70 hover:opacity-100"
+            >
               <Link href={`/viruses/${virus.id}`}>
-                <div className="relative w-full aspect-square flex items-center justify-center">
-                  <h3 className="z-20 text-white text-[4vw] font-grotesk text-shadow-lg/50">
+                <div className="relative w-full aspect-square flex items-center justify-center ">
+                  <h3 className="z-20 text-white text-7xl font-grotesk text-shadow-lg/50">
                     {virus.virusName}
                   </h3>
                   <Image
