@@ -8,8 +8,12 @@ export default function Home() {
   return (
     <div className="">
       <div className="giantVector">
-        <h1>Vector</h1>
-        <h2>The virus shop</h2>
+        <h1 className="font-grotesk font-black justify-self-center lowercase text-[#3acda8] text-[26vw] leading-[12vw] -z-1">
+          Vector
+        </h1>
+        <h2 className="mt-[9vh] text-right relative -translate-x-[18.5vw] text-[3.7vw] text-white -z-10 uppercase font-thin font-grotesk">
+          The virus shop
+        </h2>
         <img src="viruses/adenovirus-home.webp" alt="Vector, the virus shop" />
       </div>
       <Featured />
