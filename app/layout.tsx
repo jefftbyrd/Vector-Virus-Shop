@@ -53,17 +53,12 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body
-        className={`${grotesk.variable} ${ddin.variable}`}
-        // style={{
-        //   fontFamily: 'var(--font-grotesk)', // temporary test
-        // }}
-      >
-        <div className="">
-          <Header />
-          <main className="">{children}</main>
-          <Footer />
-        </div>
+      <body className={`${grotesk.variable} ${ddin.variable}`}>
+        {/* <div className=""> */}
+        <Header />
+        <main className="">{children}</main>
+        <Footer />
+        {/* </div> */}
       </body>
     </html>
   );

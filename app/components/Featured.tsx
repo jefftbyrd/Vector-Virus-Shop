@@ -13,9 +13,9 @@ export default async function Featured() {
   });
 
   return (
-    <div className="featured pt-5 pb-10">
+    <div className="featured pt-5 pb-10 w-full">
       <h2 className="special">Featured Viruses</h2>
-      <div className="grid grid-cols-3 gap-40 px-40 py-8">
+      <div className="grid lg:grid-cols-3 gap-5 xl:gap-40 px-10 xl:px-40 py-8">
         {featuredViruses.map((virus) => {
           return (
             <div
@@ -24,7 +24,7 @@ export default async function Featured() {
             >
               <Link href={`/viruses/${virus.id}`}>
                 <div className="relative w-full aspect-square flex items-center justify-center ">
-                  <h3 className="z-20 text-white text-7xl font-grotesk text-shadow-lg/50">
+                  <h3 className="z-20 text-white text-3xl lg:text-5xl xl:text-7xl font-grotesk text-shadow-lg/50">
                     {virus.virusName}
                   </h3>
                   <Image
