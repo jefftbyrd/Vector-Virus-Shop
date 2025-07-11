@@ -13,7 +13,7 @@ import Countries from './Countries';
 export default function CheckoutForm() {
   return (
     <>
-      <h1>Checkout</h1>
+      <h1 className="pageTitle">Checkout</h1>
       <form className="customerInfo" id="checkOutForm">
         <section>
           <h2>Contact</h2>

@@ -49,7 +49,11 @@ function Tagline(props: TaglineProps) {
   if (!props.show) {
     return null;
   }
-  return <h2>({props.singleVirus.tagline})</h2>;
+  return (
+    <h2 className="font-ddin text-white text-5xl">
+      ({props.singleVirus.tagline})
+    </h2>
+  );
 }
 
 function Classification(props: ClassificationProps) {
@@ -105,7 +109,7 @@ export default async function SingleVirusPage(props: PageProps) {
   }
 
   return (
-    <div className="subGridSingleVirus">
+    <>
       <div className="w-full aspect-square bigImage">
         <Image
           // src={singleVirus.image ?? ''}
@@ -123,30 +127,32 @@ export default async function SingleVirusPage(props: PageProps) {
         alt={singleVirus.virusName}
         src={singleVirus.image ?? undefined}
       /> */}
-      <div className="singleVirusPage inside">
-        <div className="content">
-          <h1>{singleVirus.virusName}</h1>
-          <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
-          <div className="virusData">
-            <div className="virusDesc">
-              <p>{singleVirus.virusDesc}</p>
-              <Classification
-                show={!!singleVirus.realm}
-                singleVirus={singleVirus}
-              />
-            </div>
+      <div className="singleVirusPage ">
+        {/* <div className="content"> */}
+        <h1 className="font-grotesk uppercase font-black text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+          {singleVirus.virusName}
+        </h1>
+        <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
+        <div className="virusData">
+          <div className="bg-black/60 w-1/2 p-5 outline outline-white/50 rounded-lg">
+            <p className="text-2xl/9">{singleVirus.virusDesc}</p>
+            <Classification
+              show={!!singleVirus.realm}
+              singleVirus={singleVirus}
+            />
+          </div>
 
-            <div className="buy">
-              <div className="price">
-                € {Number(singleVirus.price).toFixed(2)}
-              </div>
-              <div className="AddToCart">
-                <AddToCart virusId={singleVirus.id} />
-              </div>
+          <div className="">
+            <div className="uppercase text-9xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+              € {Number(singleVirus.price).toFixed(2)}
+            </div>
+            <div className="AddToCart">
+              <AddToCart virusId={singleVirus.id} />
             </div>
           </div>
         </div>
+        {/* </div> */}
       </div>
-    </div>
+    </>
   );
 }

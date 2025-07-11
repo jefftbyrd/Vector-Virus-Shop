@@ -12,7 +12,7 @@ export default async function Viruses() {
 
   return (
     <div className="justify-self-center w-auto">
-      <h1>Viruses</h1>
+      <h1 className="pageTitle">Viruses</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
         {viruses.map((virus) => {
           return (

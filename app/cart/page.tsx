@@ -135,7 +135,7 @@ export default async function CartPage() {
       <div className="inside">
         <div className="cartPage threeOneGrid">
           <div className="virusCart three">
-            <h1>My Virus Cart</h1>
+            <h1 className="pageTitle">My Virus Cart</h1>
             <div className="cart">
               <CartItemsList
                 show={virusesInCart.length > 0}
