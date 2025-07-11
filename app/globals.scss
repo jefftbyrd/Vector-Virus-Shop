@@ -42,8 +42,12 @@
 //   }
 // }
 
+.pageSpace {
+  @apply w-full px-5 py-5 py-2 lg:px-30 lg:py-20;
+}
+
 .pageTitle {
-  @apply font-grotesk text-9xl uppercase font-black mb-10;
+  @apply font-grotesk text-6xl lg:text-9xl uppercase font-black mb-10;
 }
 
 .buttonBlue {
@@ -52,14 +56,6 @@
     background-color: color-mix(in srgb, #3bb6ff 80%, white 20%) !important;
   }
 }
-
-// .buttonGreen {
-//   transition: background-color 140ms;
-//   background-color: #185d4e;
-//   &:hover {
-//     background-color: lighten(#185d4e, 30%) !important;
-//   }
-// }
 
 .buttonGreen {
   transition: background-color 140ms;
@@ -79,7 +75,7 @@ body {
 }
 
 p {
-  @apply text-xl/8 font-ddin mb-5;
+  @apply text-lg/8 lg:text-xl/8 font-ddin mb-5;
 }
 
 .special {
@@ -382,15 +378,6 @@ header {
     }
   }
 
-  .virusDesc {
-    // background-color: rgba(0, 0, 0, 0.6);
-    // padding: 30px;
-    // border: 1px solid var(--primary);
-    // border-radius: 1rem;
-    // width: 50%;
-    // @apply bg-black/60 w-1/2 p-5 outline outline-white/50;
-  }
-
   img {
     width: 60%;
     float: none;
@@ -637,48 +624,13 @@ button {
 }
 
 .cartItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0px 0px 10px 10px;
-  border-bottom: solid #3acda8 1px;
-  gap: 40px;
-
-  img {
-    height: 200px;
-    width: 200px;
-  }
-
-  .virusName {
-    min-width: 250px;
-
-    h2 {
-      margin: 0;
-      padding: 0;
-      color: white;
-      font-size: 2.4rem;
-      text-transform: uppercase;
-    }
-  }
-
-  h2 {
-    color: var(--light-green);
-  }
-
   .subtotal {
-    font-family: var(--font-chivo);
+    // font-family: var(--font-chivo);
     color: white;
     // font-size: 2.2rem;
     font-size: 1.5rem;
     margin-left: 40px;
     justify-self: 'start';
-  }
-
-  .info {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
   }
 
   h3 {
