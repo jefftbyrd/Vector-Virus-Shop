@@ -11,9 +11,9 @@ export default async function Viruses() {
   const viruses = await getVirusesInsecure();
 
   return (
-    <div className="justify-self-center w-auto">
+    <div className="pageSpace">
       <h1 className="pageTitle">Viruses</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-10 ">
         {viruses.map((virus) => {
           return (
             <div key={`virusId-${virus.id}`} style={{ position: 'relative' }}>
