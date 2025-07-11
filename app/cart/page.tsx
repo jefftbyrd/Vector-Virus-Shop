@@ -49,7 +49,7 @@ function TotalAndCheckout(props: TotalAndCheckoutProps) {
     return null;
   }
   return (
-    <div className="orderSummary oneGrid">
+    <div className="orderSummary">
       <h2>
         Order
         <br />
@@ -99,7 +99,7 @@ export default async function CartPage() {
     return (
       <div
         key={`cartItemId-${cartItem.id}`}
-        className="cartItem"
+        className="cartItem grid grid-cols-4 items-center justify-start gap-10 border-b-1"
         data-test-id="product-<product id>"
       >
         <Link href={`/viruses/${cartItem.id}`}>
@@ -109,46 +109,47 @@ export default async function CartPage() {
             data-test-id="product-image"
           />
         </Link>
-        <div className="info">
-          <Link className="virusName" href={`/viruses/${cartItem.id}`}>
-            <h2>{cartItem.virusName}</h2>
-          </Link>
-          <div className="cartItemQuantity">
-            <h3>Quantity</h3>
-            <UpdateCart
-              cartItemId={Number(cartItem.id)}
-              cartItemQuantity={Number(cartItem.quantity)}
-            />
-            <RemoveFromCart cartItemId={Number(cartItem.id)} />
-          </div>
-          <div className="subtotal">
-            <h3>Virus Total</h3>€{' '}
-            {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
-          </div>
+
+        <Link className="" href={`/viruses/${cartItem.id}`}>
+          <h2 className="uppercase font-grotesk font-regular uppercase text-white lg:text-3xl">
+            {cartItem.virusName}
+          </h2>
+        </Link>
+
+        <div className="cartItemQuantity">
+          <h3>Quantity</h3>
+          <UpdateCart
+            cartItemId={Number(cartItem.id)}
+            cartItemQuantity={Number(cartItem.quantity)}
+          />
+          <RemoveFromCart cartItemId={Number(cartItem.id)} />
+        </div>
+
+        <div className="subtotal">
+          <h3>Virus Total</h3>€{' '}
+          {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
         </div>
       </div>
     );
   });
 
   return (
-    <div className="subGrid">
-      <div className="inside">
-        <div className="cartPage threeOneGrid">
-          <div className="virusCart three">
-            <h1 className="pageTitle">My Virus Cart</h1>
-            <div className="cart">
-              <CartItemsList
-                show={virusesInCart.length > 0}
-                virusesInCartList={virusesInCartList}
-              />
-              <CartEmpty show={virusesInCart.length === 0} />
-            </div>
+    <div className="pageSpace">
+      <h1 className="pageTitle">My Virus Cart</h1>
+      <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-10">
+        <div className="lg:col-span-3">
+          <div className="cart w-auto">
+            <CartItemsList
+              show={virusesInCart.length > 0}
+              virusesInCartList={virusesInCartList}
+            />
+            <CartEmpty show={virusesInCart.length === 0} />
           </div>
-          <TotalAndCheckout
-            show={virusesInCart.length > 0}
-            virusesInCart={virusesInCart}
-          />
         </div>
+        <TotalAndCheckout
+          show={virusesInCart.length > 0}
+          virusesInCart={virusesInCart}
+        />
       </div>
     </div>
   );
