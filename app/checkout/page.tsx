@@ -110,21 +110,19 @@ export default async function CheckoutPage() {
   });
 
   return (
-    <div className="subGrid">
-      <div className="inside">
-        <div className="threeOneGrid">
-          <div className="threeGrid">
-            <CheckoutForm />
-          </div>
+    <div className="pageSpace">
+      <div className="threeOneGrid">
+        <div className="threeGrid">
+          <CheckoutForm />
+        </div>
 
-          <div className="oneGrid">
-            <CheckoutCart
-              show={virusesInCart.length > 0}
-              virusesInCartList={virusesInCartList}
-              totalCartItems={totalCartItems}
-              cartTotal={cartTotal}
-            />
-          </div>
+        <div className="oneGrid">
+          <CheckoutCart
+            show={virusesInCart.length > 0}
+            virusesInCartList={virusesInCartList}
+            totalCartItems={totalCartItems}
+            cartTotal={cartTotal}
+          />
         </div>
       </div>
     </div>
