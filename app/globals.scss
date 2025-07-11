@@ -42,6 +42,10 @@
 //   }
 // }
 
+.pageTitle {
+  @apply font-grotesk text-9xl uppercase font-black mb-10;
+}
+
 .buttonBlue {
   transition: background-color 140ms;
   &:hover {
@@ -71,21 +75,12 @@ a {
 }
 
 body {
-  // color: white;
-  // font-size: 1rem;
-  // background: var(--background);
-  @apply bg-background text-white font-ddin tracking-wider;
-  // font-family: var(--font-ddin);
-  // font-family: var(--font-chivo);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-background text-white font-ddin tracking-wider antialiased;
 }
 
-// p {
-//   margin-bottom: 30px;
-//   line-height: 2.09rem;
-//   font-size: 1.35rem;
-// }
+p {
+  @apply text-xl/8 font-ddin mb-5;
+}
 
 .special {
   @apply text-xl lg:text-6xl font-ddin font-thin text-white text-shadow-md text-shadow-dark-green ml-5 lg:ml-10 tracking-wider;
@@ -184,8 +179,6 @@ header {
 /* NEWS BLOCK */
 
 .news {
-  // margin-top: 70px;
-
   h2 {
     color: var(--light-green);
     font-size: 2.5vw;
@@ -339,8 +332,6 @@ header {
       letter-spacing: 0.06rem;
 
       span {
-        /* background-color: var(--light-green); */
-        /* color: var(--dark-green); */
         color: var(--light-blue);
 
         margin-left: 5px;
@@ -350,42 +341,11 @@ header {
     }
   }
 
-  h1 {
-    font-family: var(--font-grotesk-gras);
-    text-transform: uppercase;
-    font-size: 12vw;
-    max-width: 100%;
-    line-height: 12vw;
-    position: relative;
-    z-index: -1;
-    color: white;
-    top: 0;
-    /* text-shadow: var(--shadow); */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 0, 0, 0.3);
-  }
-
-  h2 {
-    color: white;
-    font-family: var(--font-chivo);
-    letter-spacing: 0.06rem;
-    font-weight: 500;
-  }
-
   .virusData {
     display: flex;
     flex-direction: row;
     gap: 30px;
     margin-top: 30px;
-  }
-
-  .price {
-    text-transform: uppercase;
-    font-size: 5.2vw;
-    color: white;
-    /* text-shadow: var(--shadow); */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(0, 0, 0, 0.3);
   }
 
   .quantity {
@@ -423,11 +383,12 @@ header {
   }
 
   .virusDesc {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 30px;
-    border: 1px solid var(--primary);
-    border-radius: 1rem;
-    width: 50%;
+    // background-color: rgba(0, 0, 0, 0.6);
+    // padding: 30px;
+    // border: 1px solid var(--primary);
+    // border-radius: 1rem;
+    // width: 50%;
+    // @apply bg-black/60 w-1/2 p-5 outline outline-white/50;
   }
 
   img {
@@ -438,10 +399,6 @@ header {
     text-align: center;
   }
 }
-
-/* .home {
-  display: flex;
-} */
 
 .headerLogo {
   h2 {
