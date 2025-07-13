@@ -91,12 +91,13 @@ p {
 }
 
 .subGridSingleVirus {
-  grid-template-columns: subgrid;
-  grid-template-rows: subgrid;
-  display: grid;
-  grid-template-areas: 'inside';
-  overflow: hidden;
-  position: relative;
+  // grid-template-columns: subgrid;
+  // grid-template-rows: subgrid;
+  // display: grid;
+  // grid-template-areas: 'inside';
+  // overflow: hidden;
+  // position: relative;
+  @apply overflow-hidden relative;
   /* padding-bottom: 70px; */
 }
 
@@ -240,6 +241,7 @@ header {
   /* overflow: hidden; */
   position: relative;
   min-height: 100vh;
+  // @apply min-h-screen relative;
 
   /* .content {
     position: relative;
@@ -338,10 +340,11 @@ header {
   }
 
   .virusData {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin-top: 30px;
+    // display: flex;
+    // flex-direction: row;
+    // gap: 30px;
+    // margin-top: 30px;
+    @apply flex flex-row gap-5 mt-5;
   }
 
   .quantity {
