@@ -1,7 +1,8 @@
 import './globals.scss';
-import '@fontsource-variable/chivo';
+// import '@fontsource-variable/chivo';
 import localFont from 'next/font/local';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+// import BurgerMenu from './components/BurgerMenu';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en">
       <body className={`${grotesk.variable} ${ddin.variable}`}>
         <Header />
+        {/* <BurgerMenu /> */}
         <main className="w-full">{children}</main>
         <Footer />
       </body>
