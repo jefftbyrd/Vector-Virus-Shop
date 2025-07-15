@@ -6,7 +6,7 @@ import News from './components/News';
 export default function Home() {
   return (
     <>
-      <div className="mb-10 lg:mt-12 xl:mb-55">
+      <div className="mb-10 lg:mt-12 xl:mb-55 hidden sm:block">
         <h1 className="font-grotesk font-black lg:justify-self-center text-center lowercase text-[#3acda8] text-[30vw] lg:text-[26vw] leading-none lg:leading-[12vw] -z-1">
           Vector
         </h1>
