@@ -50,7 +50,7 @@ function Tagline(props: TaglineProps) {
     return null;
   }
   return (
-    <h2 className="font-ddin text-white text-3xl xl:text-5xl ml-2 xl:ml-4">
+    <h2 className="font-ddin text-white text-2xl xl:text-5xl ml-2 xl:ml-4">
       ({props.singleVirus.tagline})
     </h2>
   );
@@ -110,7 +110,7 @@ export default async function SingleVirusPage(props: PageProps) {
 
   return (
     <div className="overflow-hidden relative">
-      <div className="w-full aspect-square bigImage">
+      <div className="w-full aspect-square opacity-50 -z-10 absolute mt-5 md:mt-10">
         <Image
           src={`/viruses/${singleVirus.image}`}
           alt={singleVirus.virusName}
@@ -123,7 +123,7 @@ export default async function SingleVirusPage(props: PageProps) {
       </div>
 
       <div className="singleVirusPage pageSpace">
-        <h1 className="font-grotesk uppercase font-black text-8xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+        <h1 className="font-grotesk uppercase font-black text-6xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
           {singleVirus.virusName}
         </h1>
         <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
@@ -136,13 +136,12 @@ export default async function SingleVirusPage(props: PageProps) {
             />
           </div>
 
-          <div className="order-1 md:order-1">
-            <div className="uppercase text-4xl lg:text-9xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+          <div className="order-1 md:order-1 w-1/2">
+            <div className="uppercase text-4xl lg:text-6xl text-center text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
               € {Number(singleVirus.price).toFixed(2)}
             </div>
-            <div className="AddToCart">
-              <AddToCart virusId={singleVirus.id} />
-            </div>
+
+            <AddToCart virusId={singleVirus.id} />
           </div>
         </div>
       </div>
