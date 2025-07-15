@@ -383,43 +383,6 @@ header {
 }
 
 .orderSummary {
-  border-radius: 30px;
-  background-color: #185d4e;
-  border: 1px var(--light-green) solid;
-  padding: 10px 20px;
-  display: flex;
-  flex-direction: column;
-
-  h2 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 2.4rem;
-    justify-self: flex-start;
-    margin-bottom: 40px;
-  }
-
-  .total {
-    display: flex;
-    justify-self: start;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    h3 {
-      font-family: var(--font-grotesk-regular);
-      text-transform: uppercase;
-      color: var(--light-green);
-      font-size: 1.6rem;
-    }
-
-    .amount {
-      color: white;
-      font-family: var(--font-chivo);
-      font-size: 1.6rem;
-      font-weight: 400;
-    }
-  }
-
   form {
     align-self: flex-end;
     width: 100%;
@@ -460,10 +423,10 @@ header {
 }
 
 .cartItem {
-  @apply grid grid-cols-3 sm:grid-cols-4 items-center justify-start gap-2 sm:gap-5 md:gap-10 border-b-1 border-light-green/30 py-3;
+  @apply grid grid-cols-3 sm:grid-cols-4 items-center justify-start gap-5 sm:gap-5 md:gap-10 border-b-1 border-light-green/30 py-3 items-start;
 
   h2 {
-    @apply uppercase font-grotesk uppercase text-white text-3xl ml-3 lg:text-3xl;
+    @apply uppercase font-grotesk uppercase text-white text-3xl lg:text-3xl text-left;
   }
 
   h3 {
