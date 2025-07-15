@@ -1,15 +1,10 @@
 import Link from 'next/link';
-// import { notFound } from 'next/navigation';
 import React from 'react';
 import type { Virus } from '../../database/viruses';
 import { getVirusesInsecure } from '../../database/viruses';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-// import deleteCookie from './actions';
-// import RemoveFromCart from './cartActions';
 import CheckoutForm from './CheckoutForm';
-
-// import ConfirmOrder from './ConfirmOrder';
 
 export const metadata = {
   title: 'Checkout',

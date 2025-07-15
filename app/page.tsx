@@ -1,5 +1,4 @@
 import Image from 'next/image';
-// import styles from './page.module.css';
 import Featured from './components/Featured';
 import News from './components/News';
 
@@ -17,8 +16,8 @@ export default function Home() {
           <Image
             src="/viruses/adenovirus-home.webp"
             alt="Vector, the virus shop"
-            width={500} // Set desired width
-            height={300} // Set actual height (for aspect ratio)
+            width={500}
+            height={300}
             className="sm:w-[27vw] h-auto"
           />
         </div>

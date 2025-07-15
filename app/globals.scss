@@ -209,7 +209,7 @@ header {
         background-size: cover;
         position: relative;
         background-position: 50%;
-        // border-radius: 0px 0px 0px 0px;
+
         @apply rounded-t-2xl;
 
         span {
@@ -249,10 +249,8 @@ header {
 }
 
 .singleVirusPage {
-  /* overflow: hidden; */
   position: relative;
   min-height: 100vh;
-  // @apply min-h-screen relative;
 
   .hideOverflow {
     overflow: hidden;
@@ -304,7 +302,6 @@ header {
 .virusItem {
   @apply p-3 sm:p-5 text-center rounded-xl bg-middle-green flex flex-col;
   flex-wrap: nowrap;
-  // flex-direction: column;
   justify-content: flex-end;
   flex-grow: 4;
   transition: background-color 100ms;
@@ -345,12 +342,6 @@ header {
   }
 
   section:last-child {
-    // border: none;
-    // background-color: var(--light-blue);
-    // padding: 0;
-    // margin: 0;
-    // gap: 0px;
-    // border-radius: 0px 0px 30px 30px;
     @apply p-0 m-0 gap-0;
   }
 
@@ -369,7 +360,6 @@ header {
   input {
     padding: 10px;
     border-radius: 10px;
-    // font-weight: bold;
     margin-top: 5px;
     background-color: var(--middle-green);
     color: white;
@@ -380,7 +370,6 @@ header {
   select {
     padding: 10px;
     border-radius: 10px;
-    // font-weight: bold;
     margin-top: 5px;
     background-color: var(--middle-green);
     color: white;
@@ -401,8 +390,6 @@ header {
 }
 
 .checkoutCart {
-  // border-radius: 30px;
-  // border: 1px var(--light-green) solid;
   @apply rounded-lg border-light-green/30 border-0;
 
   .checkoutCartList {
@@ -411,7 +398,6 @@ header {
 
   .checkoutCartItem {
     .info {
-      /* justify-self: end; */
       margin-left: 10px;
 
       h2 {
@@ -432,8 +418,6 @@ header {
 /* FOOTER */
 
 .footer {
-  // @apply grid grid-cols-2 gap-5 px-5 pt-5 pb-10 sm:grid-cols-4 sm:px-30 sm:pt-10 md:pb-20 bg-black/30 border-t-1 border-light-green;
-
   h3 {
     @apply font-grotesk uppercase mb-2 text-xl md:text-2xl font-black tracking-wider;
   }
@@ -449,10 +433,6 @@ header {
 }
 
 .newsletter {
-  // label {
-  //   @apply flex flex-col gap-2;
-  // }
-
   input::placeholder {
     font-weight: bold;
     opacity: 0.6;
@@ -469,10 +449,6 @@ header {
     border: 1px var(--light-green) solid;
     @apply h-10;
   }
-
-  // button {
-  //   @apply px-3 py-2 bg-light-blue text-dark-green uppercase font-bold font-ddin rounded-lg text-sm sm:text-xl;
-  // }
 }
 
 .empty {
