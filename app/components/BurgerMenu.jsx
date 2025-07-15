@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
-const BurgerMenu = () => {
+const BurgerMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleStateChange = (state) => {
@@ -34,9 +34,20 @@ const BurgerMenu = () => {
           <Link onClick={closeMenu} className="menu-item" href="/about">
             About
           </Link>
-          <Link onClick={closeMenu} className="menu-item" href="/cart">
-            Cart
+          <Link
+            href="/cart"
+            data-test-id="cart-link"
+            onClick={closeMenu}
+            className="menu-item"
+          >
+            Cart{' '}
+            <span data-test-id="cart-count">
+              {`[${props.totalCartItems ? props.totalCartItems : 'empty'}]`}
+            </span>
           </Link>
+          {props.totalCartItems > 0 ? (
+            <Link href="/checkout">Checkout</Link>
+          ) : null}
         </Menu>
       </div>
       <div className="pb-2">
