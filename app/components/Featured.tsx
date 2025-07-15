@@ -15,7 +15,7 @@ export default async function Featured() {
   return (
     <div className="featured pt-5 pb-10 w-full">
       <h2 className="special">Featured Viruses</h2>
-      <div className="grid lg:grid-cols-3 gap-5 xl:gap-40 px-10 xl:px-40 py-8">
+      <div className="grid lg:grid-cols-3 gap-5 xl:gap-20 px-10 py-5 xl:px-35 md:py-8">
         {featuredViruses.map((virus) => {
           return (
             <div
@@ -44,25 +44,3 @@ export default async function Featured() {
     </div>
   );
 }
-
-// return (
-//     <div className="featured">
-//       <h2 className="">Featured Viruses</h2>
-//       <div className="featuredGrid">
-//         {featuredViruses.map((virus) => {
-//           return (
-//             <div
-//               key={`virusId-${virus.id}`}
-//               style={{ backgroundImage: `url(viruses/${virus.image})` }}
-//               className="featuredItem"
-//             >
-//               <Link href={`/viruses/${virus.id}`}>
-//                 <h3>{virus.virusName}</h3>
-//               </Link>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
