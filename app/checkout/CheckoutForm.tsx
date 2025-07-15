@@ -12,120 +12,117 @@ import Countries from './Countries';
 
 export default function CheckoutForm() {
   return (
-    <>
-      <h1 className="pageTitle">Checkout</h1>
-      <form className="customerInfo" id="checkOutForm">
-        <section>
-          <h2>Contact</h2>
+    <form className="customerInfo" id="checkOutForm">
+      <section>
+        <h2>Contact</h2>
+        <div className="fitTwo">
           <label>
-            Email:
+            First Name:{' '}
             <input
-              type="email"
-              placeholder="Email"
-              data-test-id="checkout-email"
+              placeholder="First Name"
+              data-test-id="checkout-first-name"
               required
             />
           </label>
-        </section>
-        <section>
-          <h2>Delivery</h2>
-          <div className="fitTwo">
-            <label>
-              First Name:{' '}
-              <input
-                placeholder="First Name"
-                data-test-id="checkout-first-name"
-                required
-              />
-            </label>
-            <label>
-              Last Name:{' '}
-              <input
-                placeholder="Last Name"
-                data-test-id="checkout-last-name"
-                required
-              />
-            </label>
-          </div>
+          <label>
+            Last Name:{' '}
+            <input
+              placeholder="Last Name"
+              data-test-id="checkout-last-name"
+              required
+            />
+          </label>
+        </div>
+        <label>
+          Email:
+          <input
+            type="email"
+            placeholder="Email"
+            data-test-id="checkout-email"
+            required
+          />
+        </label>
+      </section>
+      <section>
+        <h2>Delivery</h2>
 
+        <label>
+          Address:{' '}
+          <input
+            placeholder="Address"
+            data-test-id="checkout-address"
+            required
+          />
+        </label>
+        <Countries />
+        <div className="fitTwo">
           <label>
-            Address:{' '}
+            City:{' '}
+            <input placeholder="City" data-test-id="checkout-city" required />
+          </label>
+          <label>
+            Postal Code:
             <input
-              placeholder="Address"
-              data-test-id="checkout-address"
+              type="number"
+              maxLength={8}
+              placeholder="Postal Code"
+              data-test-id="checkout-postal-code"
               required
             />
           </label>
-          <Countries />
-          <div className="fitTwo">
-            <label>
-              City:{' '}
-              <input placeholder="City" data-test-id="checkout-city" required />
-            </label>
-            <label>
-              Postal Code:
-              <input
-                type="number"
-                maxLength={8}
-                placeholder="Postal Code"
-                data-test-id="checkout-postal-code"
-                required
-              />
-            </label>
-          </div>
-        </section>
-        <section>
-          <h2>Payment</h2>
+        </div>
+      </section>
+      <section className="!border-0">
+        <h2>Payment</h2>
 
+        <label>
+          Cardholder Name: <input placeholder="Cardholder Name" required />
+        </label>
+        <label>
+          Card Number:{' '}
+          <input
+            data-test-id="checkout-credit-card"
+            inputMode="numeric"
+            pattern="[0-9\s]{13,19}"
+            autoComplete="cc-number"
+            maxLength={19}
+            placeholder="xxxx xxxx xxxx xxxx"
+            required
+          />
+        </label>
+        <div className="fitTwo">
           <label>
-            Cardholder Name: <input placeholder="Cardholder Name" required />
-          </label>
-          <label>
-            Card Number:{' '}
+            Expiration Date: (MM/YY){' '}
             <input
-              data-test-id="checkout-credit-card"
-              inputMode="numeric"
-              pattern="[0-9\s]{13,19}"
-              autoComplete="cc-number"
-              maxLength={19}
-              placeholder="xxxx xxxx xxxx xxxx"
+              type="month"
+              data-test-id="checkout-expiration-date"
               required
             />
           </label>
-          <div className="fitTwo">
-            <label>
-              Expiration Date: (MM/YY){' '}
-              <input
-                type="month"
-                data-test-id="checkout-expiration-date"
-                required
-              />
-            </label>
-            <label>
-              CVV: (3 digits){' '}
-              <input
-                maxLength={3}
-                placeholder="CVV"
-                data-test-id="checkout-security-code"
-                required
-              />
-            </label>
-          </div>
-        </section>
-        <section>
-          <button
-            form="checkOutForm"
-            className="confirmButton"
-            data-test-id="checkout-confirm-order"
-            formAction={async () => {
-              await deleteCookie();
-              window.location.href = '/thank-you';
-            }}
-          >
-            Confirm Order
-          </button>
-        </section>
-      </form>
-    </>
+          <label>
+            CVV: (3 digits){' '}
+            <input
+              maxLength={3}
+              placeholder="CVV"
+              data-test-id="checkout-security-code"
+              required
+            />
+          </label>
+        </div>
+      </section>
+      <section>
+        <button
+          form="checkOutForm"
+          className="rounded-lg bg-light-blue uppercase font-bold text-4xl text-dark-green p-3 mt-5"
+          data-test-id="checkout-confirm-order"
+          formAction={async () => {
+            await deleteCookie();
+            window.location.href = '/thank-you';
+          }}
+        >
+          Confirm Order
+        </button>
+      </section>
+    </form>
   );
 }
