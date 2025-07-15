@@ -37,7 +37,7 @@
 }
 
 .pageSpace {
-  @apply w-full px-5 py-5 py-2 lg:px-30 lg:py-20;
+  @apply w-full px-5 py-5 py-2 sm:p-10 lg:p-20;
 }
 
 .pageTitle {
@@ -50,7 +50,7 @@ a {
 }
 
 body {
-  @apply bg-background text-white font-ddin tracking-wider antialiased;
+  @apply bg-background text-white font-ddin tracking-wider antialiased flex flex-col min-h-screen;
 }
 
 p {
@@ -58,7 +58,7 @@ p {
 }
 
 .special {
-  @apply text-3xl lg:text-6xl font-ddin font-thin text-white text-shadow-md text-shadow-dark-green ml-5 sm:ml-5 lg:ml-10 tracking-wider;
+  @apply text-3xl sm:text-xl lg:text-4xl font-ddin font-thin text-white text-shadow-md text-shadow-dark-green ml-5 sm:ml-5 lg:ml-10 tracking-wider;
 }
 
 .subGrid {
@@ -77,27 +77,6 @@ p {
 
 header {
   @apply bg-light-green sm:bg-transparent w-full z-100 fixed sm:static;
-  .normalMenu {
-    @apply top-0 sm:sticky top-0 z-100 hidden sm:flex;
-
-    h2 {
-      @apply lowercase text-[#0e372e] font-grotesk text-[1.6rem] bg-[#3acda8] tracking-[0.3rem] font-black px-5 leading-[3.2rem] h-full;
-    }
-
-    nav {
-      display: flex;
-      flex-direction: list;
-      background-color: blue;
-      gap: 40px;
-      text-transform: uppercase;
-      letter-spacing: 0.09rem;
-      padding: 20px 30px 20px 30px;
-      color: white;
-      border-bottom: solid var(--primary);
-      border-right: solid var(--primary);
-      @apply h-16;
-    }
-  }
 
   .burgerMenu {
     @apply sm:hidden;
@@ -203,7 +182,7 @@ header {
   }
 
   .newsItems {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10 w-full;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10 w-full;
 
     .item {
       @apply shadow-lg outline outline-white/20 rounded-2xl w-full;
@@ -214,7 +193,7 @@ header {
         @apply bg-middle-green/50 px-6 py-4 rounded-b-2xl border-t-1 border-white/30;
 
         h3 {
-          @apply text-xl font-ddin font-thin tracking-wider sm:text-2xl;
+          @apply text-xl font-ddin font-thin tracking-wider sm:text-xl lg:text-2xl;
         }
 
         h4 {
@@ -322,65 +301,17 @@ header {
 
 /* PRODUCTS PAGE */
 
-.virusProductsList {
-  margin-top: 20px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-}
-
 .virusItem {
-  border-radius: 30px;
-  @apply p-5 text-center;
-  background-color: #185d4e;
-  display: flex;
+  @apply p-3 sm:p-5 text-center rounded-xl bg-middle-green flex flex-col;
   flex-wrap: nowrap;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: flex-end;
   flex-grow: 4;
   transition: background-color 100ms;
   &:hover {
     background-color: lighten(#185d4e, 8);
   }
-
-  h2 {
-    font-family: var(--font-grotesk-regular);
-    font-weight: 300;
-    color: white;
-    font-size: 2.8rem;
-  }
-
-  h3 {
-    letter-spacing: 0.06rem;
-    font-weight: 300;
-  }
-
-  .itemPrice {
-    font-family: var(--font-chivo);
-    color: var(--light-green);
-    font-size: 2rem;
-    border-top: 1px solid var(--light-green);
-    margin: 10px auto 0px;
-    padding: 10px 0px 0px 0px;
-  }
 }
-
-// .threeOneGrid {
-//   display: grid;
-//   grid-template-columns: 3fr 20px 1fr;
-//   grid-column-gap: 10px;
-// }
-
-// .threeGrid {
-//   grid-column-start: 1;
-//   grid-column-end: 1;
-// }
-
-// .oneGrid {
-//   grid-column-start: 3;
-//   grid-column-end: 3;
-//   align-self: start;
-// }
 
 /* CART PAGE */
 
@@ -479,13 +410,6 @@ header {
   }
 
   .checkoutCartItem {
-    // display: grid;
-    // grid-template-columns: repeat(3, minmax(50px, 1fr));
-    // grid-template-rows: auto;
-    // gap: 0px;
-    // align-items: center;
-    // @apply flex flex-row gap-5 items-start;
-
     .info {
       /* justify-self: end; */
       margin-left: 10px;
@@ -508,9 +432,7 @@ header {
 /* FOOTER */
 
 .footer {
-  background-color: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid var(--light-green);
-  @apply grid grid-cols-2 gap-5 px-5 pt-5 pb-10 md:grid-cols-4 md:px-30 md:pt-10 md:pb-20;
+  // @apply grid grid-cols-2 gap-5 px-5 pt-5 pb-10 sm:grid-cols-4 sm:px-30 sm:pt-10 md:pb-20 bg-black/30 border-t-1 border-light-green;
 
   h3 {
     @apply font-grotesk uppercase mb-2 text-xl md:text-2xl font-black tracking-wider;
@@ -527,9 +449,9 @@ header {
 }
 
 .newsletter {
-  label {
-    @apply flex-col sm:flex-row gap-5;
-  }
+  // label {
+  //   @apply flex flex-col gap-2;
+  // }
 
   input::placeholder {
     font-weight: bold;
@@ -545,26 +467,15 @@ header {
     color: white;
     letter-spacing: 0.06rem;
     border: 1px var(--light-green) solid;
-    @apply h-10 w-full;
+    @apply h-10;
   }
 
-  button {
-    border-radius: 10px;
-    border: 1px var(--light-green) solid;
-    /* width: 100%; */
-    font-family: var(--font-chivo);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.1rem;
-    color: var(--dark-green);
-    background-color: var(--light-blue);
-    @apply px-3 py-2;
-  }
+  // button {
+  //   @apply px-3 py-2 bg-light-blue text-dark-green uppercase font-bold font-ddin rounded-lg text-sm sm:text-xl;
+  // }
 }
 
 .empty {
-  // font-family: var(--font-chivo);
   font-weight: 300;
   font-size: 2rem;
 }
