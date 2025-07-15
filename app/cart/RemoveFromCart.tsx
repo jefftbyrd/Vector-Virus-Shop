@@ -7,9 +7,9 @@ type Props = {
 
 export default function RemoveFromCart(props: Props) {
   return (
-    <form>
+    <form className="h-full">
       <button
-        className="remove buttonBlue"
+        className="h-full uppercase bg-light-blue text-dark-green text-sm font-bold w-auto px-5 border-0"
         formAction={() => removeItem(props.cartItemId)}
         data-test-id="cart-product-remove-<product id>"
       >
