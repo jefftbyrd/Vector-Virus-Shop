@@ -37,11 +37,7 @@ export default function Footer() {
         <h3>Sign up for our Newsletter</h3>
         <form className="newsletter">
           <label>
-            <input
-              type="email"
-              placeholder="enter your email address"
-              required
-            />
+            <input type="email" placeholder="email address" required />
             <button className="buttonBlue">Subscribe</button>
           </label>
         </form>
