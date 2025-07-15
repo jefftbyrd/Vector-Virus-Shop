@@ -10,6 +10,8 @@ import { CartTotal } from './actions';
 import RemoveFromCart from './RemoveFromCart';
 import UpdateCart from './UpdateCart';
 
+// import VirusesInCartList from './VirusesInCartList';
+
 export const metadata = {
   title: 'Cart',
   description: 'This is the cart page!',
@@ -99,10 +101,10 @@ export default async function CartPage() {
     return (
       <div
         key={`cartItemId-${cartItem.id}`}
-        className="cartItem grid grid-cols-4 items-center justify-start gap-10 border-b-1"
+        className="cartItem"
         data-test-id="product-<product id>"
       >
-        <Link href={`/viruses/${cartItem.id}`}>
+        <Link href={`/viruses/${cartItem.id}`} className="col-span-1">
           <img
             alt={cartItem.virusName}
             src={`/viruses/${cartItem.image}`}
@@ -110,14 +112,15 @@ export default async function CartPage() {
           />
         </Link>
 
-        <Link className="" href={`/viruses/${cartItem.id}`}>
-          <h2 className="uppercase font-grotesk font-regular uppercase text-white lg:text-3xl">
-            {cartItem.virusName}
-          </h2>
+        <Link
+          className="col-span-2 sm:col-span-1"
+          href={`/viruses/${cartItem.id}`}
+        >
+          <h2 className="">{cartItem.virusName}</h2>
         </Link>
 
-        <div className="cartItemQuantity">
-          <h3>Quantity</h3>
+        <div className="grid grid-cols-3 col-span-full sm:grid-cols-1 sm:col-span-1 gap-2 sm:gap-0 h-auto mt-0 sm:mt-0 items-center justify-end">
+          <h3 className="hidden sm:static">Quantity</h3>
           <UpdateCart
             cartItemId={Number(cartItem.id)}
             cartItemQuantity={Number(cartItem.quantity)}
@@ -125,9 +128,11 @@ export default async function CartPage() {
           <RemoveFromCart cartItemId={Number(cartItem.id)} />
         </div>
 
-        <div className="subtotal">
-          <h3>Virus Total</h3>€{' '}
-          {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
+        <div className="flex col-span-full sm:grid-cols-1 sm:col-span-1 border-1 border-light-green/30 p-1 justify-center">
+          <h3 className="">Subtotal</h3>
+          <span className="text-white text-lg md:ml-2 ml-3">
+            € {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
+          </span>
         </div>
       </div>
     );
