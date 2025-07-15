@@ -51,22 +51,22 @@ function TotalAndCheckout(props: TotalAndCheckoutProps) {
     return null;
   }
   return (
-    <div className="orderSummary flex flex-col bg-middle-green border-light-green/30 border-1 p-4">
-      <h2 className="uppercase text-white text-4xl mb-5">
+    <div className="orderSummary flex flex-col  border-light-green/30 sm:border-l-1 sm:p-8 h-auto gap-3">
+      <h2 className="uppercase text-white text-4xl tracking-wider font-bold">
         Order
         <br />
         Summary
       </h2>
-      <div className="total flex justify-self-start flex-row  items-end">
-        <h3 className="font-grotesk uppercase text-light-green text-2xl">
-          Total:
-        </h3>
-        <h3 data-test-id="cart-total" className="amount">
-          €<CartTotal virusesInCart={props.virusesInCart} />
+      <div className="flex text-3xl font-ddin">
+        <h3 className="uppercase text-light-green font-bold">Total</h3>
+        <h3 data-test-id="cart-total" className="ml-3">
+          € <CartTotal virusesInCart={props.virusesInCart} />
         </h3>
       </div>
       <form action="/checkout">
-        <button className="buttonBlue">Checkout</button>
+        <button className="text-3xl uppercase text-dark-green tracking-wider bg-light-blue p-3 rounded-lg w-full">
+          Checkout
+        </button>
       </form>
     </div>
   );
@@ -103,10 +103,10 @@ export default async function CartPage() {
     return (
       <div
         key={`cartItemId-${cartItem.id}`}
-        className="cartItem"
+        className="cartItem "
         data-test-id="product-<product id>"
       >
-        <div>
+        <div className="">
           <Link href={`/viruses/${cartItem.id}`} className="col-span-1">
             <img
               alt={cartItem.virusName}
@@ -116,7 +116,7 @@ export default async function CartPage() {
           </Link>
         </div>
 
-        <div className="flex flex-col col-span-2">
+        <div className="flex flex-col col-span-2 gap-3 ml-3">
           <div>
             <Link
               className="col-span-2 sm:col-span-1"
@@ -125,21 +125,21 @@ export default async function CartPage() {
               <h2 className="">{cartItem.virusName}</h2>
             </Link>
           </div>
-          <div className="flex flex-row gap-2 sm:gap-0 sm:mt-0 items-center justify-start h-full ">
-            <h3 className="hidden sm:static">Quantity</h3>
+          <div className="flex flex-row gap-2 sm:gap-5 sm:mt-0 items-center justify-start h-full">
+            {/* <h3 className="hidden sm:block">Quantity</h3> */}
             <UpdateCart
               cartItemId={Number(cartItem.id)}
               cartItemQuantity={Number(cartItem.quantity)}
             />
             <RemoveFromCart cartItemId={Number(cartItem.id)} />
           </div>
-        </div>
-
-        <div className="flex col-span-full sm:grid-cols-1 sm:col-span-1 border-1 border-light-green/30 p-1 justify-center">
-          <h3 className="">Subtotal</h3>
-          <span className="text-white text-lg md:ml-2 ml-3">
-            € {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
-          </span>
+          <div className="flex sm:grid-cols-1 sm:col-span-1 justify-start">
+            <h3 className="">Subtotal</h3>
+            <span className="text-white text-lg sm:text-2xl sm:ml-2 ml-3">
+              €{' '}
+              {(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
+            </span>
+          </div>
         </div>
       </div>
     );
