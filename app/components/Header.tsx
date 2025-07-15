@@ -16,15 +16,17 @@ export default async function Header() {
 
   return (
     <header className="">
-      <div className="normalMenu">
-        <Link href="/">
-          <h2>Vector</h2>
-        </Link>
+      <div className="normalMenu top-0 sm:sticky top-0 z-100 hidden sm:flex items-center h-16">
+        <div className="flex flex-row h-full bg-light-green items-center">
+          <Link href="/">
+            <h2 className="lowercase text-dark-green font-grotesk text-[1.7rem] leading-none tracking-[0.3rem] font-black h-full px-4 -translate-y-1">
+              Vector
+            </h2>
+          </Link>
+        </div>
 
-        <nav>
-          <div>
-            <Link href="/viruses">Viruses</Link>
-          </div>
+        <nav className="flex flex-row h-full bg-harsh-blue gap-10 uppercase tracking-wider text-white border-b-1 border-r-1 items-center px-10">
+          <Link href="/viruses">Viruses</Link>
           <Link href="/about">About</Link>
           <Link href="/cart" data-test-id="cart-link">
             Cart:{' '}
@@ -32,10 +34,10 @@ export default async function Header() {
               {`[${totalCartItems ? totalCartItems : 'empty'}]`}
             </span>
           </Link>
-          <Link href="/checkout">Checkout</Link>
+          {totalCartItems > 0 ? <Link href="/checkout">Checkout</Link> : null}
         </nav>
       </div>
-      <BurgerMenu />
+      <BurgerMenu totalCartItems={totalCartItems} />
     </header>
   );
 }
