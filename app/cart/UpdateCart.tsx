@@ -11,9 +11,9 @@ export default function Update(props: UpdateProps) {
   const [quantity, setQuantity] = useState(props.cartItemQuantity);
   return (
     <form>
-      <div className="cartQuantity">
+      <div className="quantityController">
         <button
-          className="buttonMinus buttonGreen"
+          className="quantityButton"
           onClick={() => setQuantity(quantity - 1)}
           formAction={() =>
             updateCartQuantity(props.cartItemId, Number(quantity))
@@ -22,6 +22,7 @@ export default function Update(props: UpdateProps) {
           -
         </button>
         <input
+          className="quantityNumber"
           data-test-id="product-quantity"
           value={Number(quantity)}
           type="number"
@@ -31,7 +32,7 @@ export default function Update(props: UpdateProps) {
           }}
         />
         <button
-          className="buttonPlus buttonGreen"
+          className="quantityButton"
           onClick={() => setQuantity(quantity + 1)}
           formAction={() =>
             updateCartQuantity(props.cartItemId, Number(quantity))
