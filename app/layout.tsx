@@ -55,10 +55,13 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={`${grotesk.variable} ${ddin.variable}`}>
-        <Header />
-        {/* <BurgerMenu /> */}
-        <main className="w-full">{children}</main>
-        <Footer />
+        <div id="outerContainer">
+          <Header />
+          <main className="pt-20 sm:pt-0" id="pageWrap">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
