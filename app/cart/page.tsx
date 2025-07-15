@@ -51,14 +51,16 @@ function TotalAndCheckout(props: TotalAndCheckoutProps) {
     return null;
   }
   return (
-    <div className="orderSummary">
-      <h2>
+    <div className="orderSummary flex flex-col bg-middle-green border-light-green/30 border-1 p-4">
+      <h2 className="uppercase text-white text-4xl mb-5">
         Order
         <br />
         Summary
       </h2>
-      <div className="total">
-        <h3>Total:</h3>
+      <div className="total flex justify-self-start flex-row  items-end">
+        <h3 className="font-grotesk uppercase text-light-green text-2xl">
+          Total:
+        </h3>
         <h3 data-test-id="cart-total" className="amount">
           €<CartTotal virusesInCart={props.virusesInCart} />
         </h3>
@@ -104,28 +106,33 @@ export default async function CartPage() {
         className="cartItem"
         data-test-id="product-<product id>"
       >
-        <Link href={`/viruses/${cartItem.id}`} className="col-span-1">
-          <img
-            alt={cartItem.virusName}
-            src={`/viruses/${cartItem.image}`}
-            data-test-id="product-image"
-          />
-        </Link>
+        <div>
+          <Link href={`/viruses/${cartItem.id}`} className="col-span-1">
+            <img
+              alt={cartItem.virusName}
+              src={`/viruses/${cartItem.image}`}
+              data-test-id="product-image"
+            />
+          </Link>
+        </div>
 
-        <Link
-          className="col-span-2 sm:col-span-1"
-          href={`/viruses/${cartItem.id}`}
-        >
-          <h2 className="">{cartItem.virusName}</h2>
-        </Link>
-
-        <div className="grid grid-cols-3 col-span-full sm:grid-cols-1 sm:col-span-1 gap-2 sm:gap-0 h-auto mt-0 sm:mt-0 items-center justify-end">
-          <h3 className="hidden sm:static">Quantity</h3>
-          <UpdateCart
-            cartItemId={Number(cartItem.id)}
-            cartItemQuantity={Number(cartItem.quantity)}
-          />
-          <RemoveFromCart cartItemId={Number(cartItem.id)} />
+        <div className="flex flex-col col-span-2">
+          <div>
+            <Link
+              className="col-span-2 sm:col-span-1"
+              href={`/viruses/${cartItem.id}`}
+            >
+              <h2 className="">{cartItem.virusName}</h2>
+            </Link>
+          </div>
+          <div className="flex flex-row gap-2 sm:gap-0 sm:mt-0 items-center justify-start h-full ">
+            <h3 className="hidden sm:static">Quantity</h3>
+            <UpdateCart
+              cartItemId={Number(cartItem.id)}
+              cartItemQuantity={Number(cartItem.quantity)}
+            />
+            <RemoveFromCart cartItemId={Number(cartItem.id)} />
+          </div>
         </div>
 
         <div className="flex col-span-full sm:grid-cols-1 sm:col-span-1 border-1 border-light-green/30 p-1 justify-center">
@@ -143,7 +150,7 @@ export default async function CartPage() {
       <h1 className="pageTitle">My Virus Cart</h1>
       <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-10">
         <div className="lg:col-span-3">
-          <div className="cart w-auto">
+          <div className="cart w-auto mb-5">
             <CartItemsList
               show={virusesInCart.length > 0}
               virusesInCartList={virusesInCartList}
