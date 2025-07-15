@@ -36,12 +36,19 @@ function CheckoutCart(props: CheckoutCartProps) {
     return null;
   }
   return (
-    <div className="checkoutCart">
-      <div className="number">{props.totalCartItems} items</div>
-      <div className="checkoutCartList">{props.virusesInCartList}</div>
-      <div className="total">
-        <p>Total</p>
-        <p>€ {props.cartTotal.toFixed(2)}</p>
+    <div className="border-2 border-light-green/30 py-5 rounded-lg">
+      <div className="flex flex-row items-end">
+        <h2 className="font-grotesk text-3xl sm:text-5xl uppercase font-bold pl-5">
+          Cart
+        </h2>
+        <div className="pl-2 sm:pl-5">({props.totalCartItems} items)</div>
+      </div>
+      <div className="flex flex-col gap-5 p-5 my-5 border-y-2 border-light-green/30">
+        {props.virusesInCartList}
+      </div>
+      <div className="tracking-wider flex flex-col uppercase text-2xl sm:text-3xl pl-5">
+        <div className="text-light-green font-bold">Total</div>
+        <div className="">€ {props.cartTotal.toFixed(2)}</div>
       </div>
     </div>
   );
@@ -86,23 +93,24 @@ export default async function CheckoutPage() {
     return (
       <div
         key={`cartItemId-${cartItem.id}`}
-        className="checkoutCartItem"
+        className="grid grid-cols-4 items-center gap-5 "
         data-test-id="product-<product id>"
       >
-        <Link href={`/viruses/${cartItem.id}`}>
+        <Link href={`/viruses/${cartItem.id}`} className="w-full">
           <img
             alt={cartItem.virusName}
             src={`/viruses/${cartItem.image}`}
             data-test-id="product-image"
+            className="w-full aspect-square"
           />
         </Link>
-        <div className="info">
-          <Link className="virusName" href={`/viruses/${cartItem.id}`}>
-            <h2>{cartItem.virusName}</h2>
-            <div className="cartItemQuantity">x {cartItem.quantity}</div>
+        <div className="text-left col-span-2 ">
+          <Link className="" href={`/viruses/${cartItem.id}`}>
+            <h2 className="font-grotesk text-lg">{cartItem.virusName}</h2>
+            <div className="text-light-green">x {cartItem.quantity}</div>
           </Link>
         </div>
-        <div className="subtotal">
+        <div className="font-ddin font-bold text-sm border-l-0 border-light-green/30 self-center text-right ">
           €{(Number(cartItem.price) * Number(cartItem.quantity)).toFixed(2)}
         </div>
       </div>
@@ -111,12 +119,13 @@ export default async function CheckoutPage() {
 
   return (
     <div className="pageSpace">
-      <div className="threeOneGrid">
-        <div className="threeGrid">
+      <h1 className="pageTitle">Checkout</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-10">
+        <div className="sm:col-span-3 order-2 sm:order-1">
           <CheckoutForm />
         </div>
 
-        <div className="oneGrid">
+        <div className="order-1 sm:order-2">
           <CheckoutCart
             show={virusesInCart.length > 0}
             virusesInCartList={virusesInCartList}
