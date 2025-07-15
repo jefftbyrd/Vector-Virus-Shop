@@ -10,7 +10,7 @@ interface UpdateProps {
 export default function Update(props: UpdateProps) {
   const [quantity, setQuantity] = useState(props.cartItemQuantity);
   return (
-    <form>
+    <form className="w-25 sm:w-50">
       <div className="quantityController">
         <button
           className="quantityButton"
