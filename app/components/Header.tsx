@@ -15,13 +15,12 @@ export default async function Header() {
   );
 
   return (
-    <>
-      <header className="normalMenu">
+    <header className="">
+      <div className="normalMenu">
         <Link href="/">
-          <h2 className="lowercase text-[#0e372e] font-grotesk text-[1.6rem] bg-[#3acda8] h-full tracking-[0.3rem] font-black px-5 leading-[3.2rem]">
-            Vector
-          </h2>
+          <h2>Vector</h2>
         </Link>
+
         <nav>
           <div>
             <Link href="/viruses">Viruses</Link>
@@ -35,8 +34,8 @@ export default async function Header() {
           </Link>
           <Link href="/checkout">Checkout</Link>
         </nav>
-      </header>
+      </div>
       <BurgerMenu />
-    </>
+    </header>
   );
 }
