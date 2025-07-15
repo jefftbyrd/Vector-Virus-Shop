@@ -9,35 +9,39 @@ type Props = {
 export default function AddToCart(props: Props) {
   const [quantity, setQuantity] = useState(1);
   return (
-    <form>
-      <div className="cartQuantity">
+    <form className="">
+      <div className="quantityController">
         <button
-          className="buttonMinus buttonGreen"
+          className="quantityButton"
           formAction={() => setQuantity(quantity - 1)}
         >
           -
         </button>
+
         <input
+          className="quantityNumber"
           data-test-id="product-quantity"
           value={Number(quantity)}
           type="number"
           min="1"
           onChange={(event) => setQuantity(Number(event.currentTarget.value))}
         />
+
         <button
-          className="buttonPlus buttonGreen"
+          className="quantityButton"
           formAction={() => setQuantity(quantity + 1)}
         >
           +
         </button>
       </div>
+
       <button
         formAction={async () => {
           setQuantity(1);
           await createOrUpdateCookie(props.virusId, Number(quantity));
         }}
         data-test-id="product-add-to-cart"
-        className="addToCart buttonBlue"
+        className="addToCartButton"
       >
         Add to cart
       </button>
