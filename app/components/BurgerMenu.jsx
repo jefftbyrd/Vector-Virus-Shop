@@ -16,7 +16,7 @@ const BurgerMenu = (props) => {
   };
 
   return (
-    <div className="burgerMenu">
+    <div className="burgerMenu ">
       <div className="">
         <Menu
           pageWrapId="pageWrap"
@@ -50,12 +50,10 @@ const BurgerMenu = (props) => {
           ) : null}
         </Menu>
       </div>
-      <div className="pb-2">
+      <div className="pb-2 w-fit m-auto">
         <Link href="/">
-          <h2>Vector</h2>
-        </Link>
-        <Link href="/">
-          <h3>The Virus Shop</h3>
+          <h2 className="">Vector</h2>
+          <h3 className="">The Virus Shop</h3>
         </Link>
       </div>
       <div className="w-auto absolute right-2 -translate-y-2 top-0">
