@@ -61,17 +61,17 @@ p {
   @apply text-3xl sm:text-xl lg:text-4xl font-ddin font-thin text-white text-shadow-md text-shadow-dark-green ml-5 sm:ml-5 lg:ml-10 tracking-wider;
 }
 
-.subGrid {
-  grid-template-columns: subgrid;
-  grid-template-rows: subgrid;
-  display: grid;
-  grid-template-areas: 'inside';
-  margin-bottom: 70px;
-}
+// .subGrid {
+//   grid-template-columns: subgrid;
+//   grid-template-rows: subgrid;
+//   display: grid;
+//   grid-template-areas: 'inside';
+//   margin-bottom: 70px;
+// }
 
-.subGridSingleVirus {
-  @apply overflow-hidden relative;
-}
+// .subGridSingleVirus {
+//   @apply overflow-hidden relative;
+// }
 
 /* HEADER */
 
@@ -105,7 +105,7 @@ header {
     }
 
     .bm-burger-button {
-      @apply fixed left-5 top-7 h-5 w-5 sm:invisible;
+      @apply fixed left-5 top-7 h-5 w-5 sm:hidden;
     }
 
     .bm-burger-bars {
@@ -455,3 +455,25 @@ header {
   font-weight: 300;
   font-size: 2rem;
 }
+
+// HOVER FX
+
+.normalMenu nav a {
+  @apply p-3 hover:text-harsh-blue hover:bg-light-blue transition-all duration-200 ease-in-out;
+}
+
+.news .item {
+  @apply hover:scale-105 transition-all duration-250 ease-in-out hover:bg-light-blue hover:outline-light-blue;
+}
+
+.bigButtonHover {
+  @apply transition-all duration-500 ease-in-out hover:scale-105 hover:bg-light-blue;
+}
+
+.normalMenu .logoContainer {
+  @apply hover:bg-light-blue hover:text-white transition-all duration-200 ease-in-out;
+}
+
+// .burgerMenu a {
+//   @apply hover:bg-light-blue hover:text-white transition-all duration-200 ease-in-out;
+// }
