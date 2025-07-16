@@ -17,16 +17,18 @@ export default async function Header() {
   return (
     <header className="">
       <div className="normalMenu top-0 sm:sticky top-0 z-100 hidden sm:flex items-center h-16">
-        <div className="flex flex-row h-full bg-light-green items-center">
+        <div className="flex flex-row h-full bg-light-green items-center logoContainer text-dark-green">
           <Link href="/">
-            <h2 className="lowercase text-dark-green font-grotesk text-[1.7rem] leading-none tracking-[0.3rem] font-black h-full px-4 -translate-y-1">
+            <h2 className="lowercase font-grotesk text-[1.7rem] leading-none tracking-[0.3rem] font-black h-full px-4 -translate-y-1">
               Vector
             </h2>
           </Link>
         </div>
 
-        <nav className="flex flex-row h-full bg-harsh-blue gap-10 uppercase tracking-wider text-white border-b-1 border-r-1 items-center px-10">
-          <Link href="/viruses">Viruses</Link>
+        <nav className="flex flex-row h-full bg-harsh-blue gap-5 uppercase tracking-wider text-white border-b-1 border-r-1 items-center px-10">
+          <Link href="/viruses">
+            <div className="hoverHeader">Viruses</div>
+          </Link>
           <Link href="/about">About</Link>
           <Link href="/cart" data-test-id="cart-link">
             Cart:{' '}
