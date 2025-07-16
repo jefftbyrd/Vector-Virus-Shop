@@ -18,7 +18,7 @@ export default function Home() {
             alt="Vector, the virus shop"
             width={500}
             height={300}
-            className="sm:w-[27vw] h-auto"
+            className="sm:w-[27vw] h-auto drop-shadow-xl/20"
           />
         </div>
       </div>
