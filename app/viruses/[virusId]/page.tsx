@@ -125,11 +125,11 @@ export default async function SingleVirusPage(props: PageProps) {
 
       <div className="singleVirusPage pageSpace">
         <Link href="/viruses">
-          <h3 className="font-ddin text-sm w-fit uppercase text-light-green p-0 sm:m-5 border-b-1 border-light-green font-normal hover:text-white hover:border-white transition-all duration-200 ease-in-out sm:absolute sm:-translate-y-15 sm:-translate-x-15 -translate-x-3 -translate-y-4">
+          <h3 className="font-ddin text-sm w-fit uppercase text-light-green p-0 sm:m-5 border-b-1 border-light-green font-normal hover:text-white hover:border-white transition-all duration-200 ease-in-out sm:absolute lg:-translate-y-15 lg:-translate-x-15 -translate-x-3 -translate-y-4 sm:-translate-x-11 sm:-translate-y-11">
             &lt; All Viruses
           </h3>
         </Link>
-        <h1 className="font-grotesk uppercase font-black text-6xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+        <h1 className="font-grotesk uppercase font-black text-5xl sm:text-7xl md:text-8xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
           {singleVirus.virusName}
         </h1>
         <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
