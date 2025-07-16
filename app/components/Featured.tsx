@@ -42,7 +42,7 @@ export default async function Featured() {
         })}
       </div>
       <Link href="/viruses">
-        <h2 className="w-fit m-auto bg-light-green text-4xl rounded-xl p-5 text-dark-green uppercase outline-6 outline-middle-green tracking-wider bigButtonHover mt-5">
+        <h2 className="w-fit m-auto bg-light-green text-2xl sm:text-4xl rounded-xl p-5 text-dark-green uppercase outline-6 outline-middle-green tracking-wider bigButtonHover mt-5">
           Browse <span className="font-bold">all viruses</span>
         </h2>
       </Link>
