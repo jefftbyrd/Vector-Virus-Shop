@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import News from '../components/News';
 
 export const metadata = {
@@ -10,33 +11,56 @@ export default function AboutPage() {
     <>
       <div className="pageSpace">
         <h1 className="pageTitle">About us</h1>
-        <p>
-          Viruses are curious things. The tiny tagalongs aren't exactly alive by
-          most definitions, but they're not really inanimate either. They've
-          flourished and diversified for billions of years and perhaps even had
-          a hand—or a squishy protein coating—in helping the first complex
-          cellular life come to be.
-        </p>
+      </div>
 
-        <p>
-          While these microbes have a dizzying array of functions and health
-          effects, the structure of a virus is surprisingly simple. Each one
-          consists of genetic material—either DNA or RNA—encapsulated in a
-          protein pocket called a capsid. Some are additionally enveloped in a
-          soft, lipid wrapping. These tiny virus packages are just tens to a few
-          hundreds of nanometers across. This makes them smaller than most
-          bacteria, which can be a small as roughly a tenth the size of a human
-          blood cell. Such a tiny size means that you can't even spot most
-          viruses with a light microscope.
-        </p>
+      <div className="bg-black/50 md:-mt-15 lg:-mt-25 pt-5 sm:pt-10 md:pt-15 lg:pt-20 pb-10 md:pb-20 px-5 sm:px-20 xl:px-30 2xl:px-40 backdrop-blur-xs drop-shadow-xl/20 grid lg:grid-cols-2 mt-30 sm:mt-40 md:mt-40">
+        <div className="lg:order-2 h-auto ">
+          <img
+            src="/about-2.webp"
+            alt="About us"
+            className="w-full lg:absolute lg:w-1/2 z-10 drop-shadow-xl/50 lg:-translate-y-30 2xl:-translate-y-60 px-5 lg:px-0 -mt-40 sm:-mt-70 lg:mt-0"
+          />
+        </div>
+        <div className="lg:order-1">
+          <p>
+            Viruses are curious things. The tiny tagalongs aren't exactly alive
+            by most definitions, but they're not really inanimate either.
+            They've flourished and diversified for billions of years and perhaps
+            even had a hand—or a squishy protein coating—in helping the first
+            complex cellular life come to be.
+          </p>
 
-        <p>
-          The one exception, a group known as giant viruses, has members with
-          astonishingly large genomes. These mega-viruses are hundreds of times
-          larger than most, with capsids that span roughly 400 to 500 nanometers
-          across and full viral forms that can measure up to 750 nanometers
-          across.
-        </p>
+          <p>
+            While these microbes have a dizzying array of functions and health
+            effects, the structure of a virus is surprisingly simple. Each one
+            consists of genetic material—either DNA or RNA—encapsulated in a
+            protein pocket called a capsid. Some are additionally enveloped in a
+            soft, lipid wrapping. These tiny virus packages are just tens to a
+            few hundreds of nanometers across. This makes them smaller than most
+            bacteria, which can be a small as roughly a tenth the size of a
+            human blood cell. Such a tiny size means that you can't even spot
+            most viruses with a light microscope.
+          </p>
+
+          <p>
+            The one exception, a group known as giant viruses, has members with
+            astonishingly large genomes. These mega-viruses are hundreds of
+            times larger than most, with capsids that span roughly 400 to 500
+            nanometers across and full viral forms that can measure up to 750
+            nanometers across.
+          </p>
+        </div>
+
+        {/* <Image
+            src="/about.webp"
+            alt="About us"
+            className="drop-shadow-xl/50"
+            fill
+            sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
+            // priority={priority && id <= 2}
+            quality={75}
+            style={{ objectFit: 'contain' }}
+          /> */}
       </div>
       <News />
     </>
