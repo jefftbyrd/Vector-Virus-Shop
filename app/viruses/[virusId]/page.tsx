@@ -129,8 +129,8 @@ export default async function SingleVirusPage(props: PageProps) {
         />
       </div>
 
-      <div className="grid sm:grid-cols-2 mx-5 sm:mx-30 mt-5 sm:mt-0">
-        <div className="w-full aspect-square z-10">
+      <div className="grid md:grid-cols-2 mx-5 sm:mx-10 xl:mx-20 2xl:mx-30 mt-5 sm:mt-0">
+        <div className="w-full aspect-square z-20">
           <img
             src={`/viruses/${singleVirus.image}`}
             alt="nothing for now"
@@ -146,14 +146,14 @@ export default async function SingleVirusPage(props: PageProps) {
             quality={75}
           /> */}
         </div>
-        <div className="flex flex-col justify-center gap-5 sm:pl-10 mt-3 sm:mt-0">
+        <div className="flex flex-col justify-center gap-5 sm:pl-10 mt-3 sm:mt-0 z-10">
           <div>
-            <h1 className="font-grotesk uppercase font-black text-5xl sm:text-7xl md:text-8xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+            <h1 className="font-grotesk uppercase font-black text-5xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
               {singleVirus.virusName}
             </h1>
             <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
           </div>
-          <div className="w-40 sm:w-auto">
+          <div className="w-40 lg:w-50 xl:w-auto">
             <div className="order-1 md:order-1 w-fit max-w-60">
               <div className="uppercase text-3xl lg:text-5xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
                 € {Number(singleVirus.price).toFixed(2)}
@@ -165,8 +165,8 @@ export default async function SingleVirusPage(props: PageProps) {
         </div>
       </div>
 
-      <div className="bg-black/50 mt-7 sm:-mt-25 pt-5 sm:pt-20 pb-10 sm:pb-20 px-5 sm:px-40 backdrop-blur-xs drop-shadow-xl/20">
-        <h3 className="font-grotesk font-bold uppercase text-2xl tracking-wider mb-3">
+      <div className="bg-black/50 mt-7 md:-mt-15 lg:-mt-25 pt-5 sm:pt-10 md:pt-15 lg:pt-20 pb-10 md:pb-20 px-5 sm:px-20 xl:px-30 2xl:px-40 backdrop-blur-xs drop-shadow-xl/20">
+        <h3 className="font-grotesk font-bold uppercase text-2xl tracking-wider mb-3 hidden md:block">
           {singleVirus.virusName}
         </h3>
         <p>{singleVirus.virusDesc}</p>
