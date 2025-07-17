@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer grid grid-cols-2 gap-5 px-5 pt-5 pb-10 sm:grid-cols-4 lg:px-10 xl:px-40 sm:pt-10 md:pb-20 bg-[#132620] border-t-1 border-light-green mt-auto">
+    <footer className="footer grid grid-cols-2 gap-5 px-5 pt-5 pb-10 sm:grid-cols-4 lg:px-10 xl:px-40 sm:pt-10 md:pb-20 bg-[#132620] border-t-3 border-light-green mt-auto">
       <div>
         <h3>Navigation</h3>
         <ul>
