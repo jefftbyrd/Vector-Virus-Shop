@@ -51,7 +51,7 @@ function Tagline(props: TaglineProps) {
     return null;
   }
   return (
-    <h2 className="font-ddin text-white text-2xl xl:text-5xl ml-2 xl:ml-4">
+    <h2 className="font-ddin text-white text-2xl xl:text-3xl ml-2 xl:ml-3">
       ({props.singleVirus.tagline})
     </h2>
   );
@@ -110,12 +110,18 @@ export default async function SingleVirusPage(props: PageProps) {
   }
 
   return (
-    <div className="overflow-hidden relative">
-      <div className="w-full aspect-square opacity-50 -z-10 fixed mt-5 md:mt-10">
+    <div className="overflow-hidden">
+      {/* <Link href="/viruses">
+        <h3 className="font-ddin text-2xl tracking-wider uppercase text-light-blue ml-3 font-black absolute right-3 top-3 border-b-2 z-100 hover:text-white hover:border-white transition-all duration-200 ease-in-out">
+          &lt; All Viruses
+        </h3>
+      </Link> */}
+
+      <div className="hidden md:block w-full aspect-square opacity-15 -z-10 fixed mt-5 md:mt-20">
         <Image
           src={`/viruses/${singleVirus.image}`}
           alt={singleVirus.virusName}
-          className="object-cover object-center"
+          className="object-cover object-center invert-90 drop-shadow-xl/50"
           fill
           sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
           // priority={priority && id <= 2}
@@ -123,33 +129,47 @@ export default async function SingleVirusPage(props: PageProps) {
         />
       </div>
 
-      <div className="singleVirusPage pageSpace">
-        <Link href="/viruses">
-          <h3 className="font-ddin text-sm w-fit uppercase text-light-green p-0 sm:m-5 border-b-1 border-light-green font-normal hover:text-white hover:border-white transition-all duration-200 ease-in-out sm:absolute lg:-translate-y-15 lg:-translate-x-15 -translate-x-3 -translate-y-4 sm:-translate-x-11 sm:-translate-y-11">
-            &lt; All Viruses
-          </h3>
-        </Link>
-        <h1 className="font-grotesk uppercase font-black text-5xl sm:text-7xl md:text-8xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
-          {singleVirus.virusName}
-        </h1>
-        <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-          <div className="bg-black/60 w-full p-5 outline outline-white/50 rounded-lg order-2 md:order-1">
-            <p className="text-2xl/9">{singleVirus.virusDesc}</p>
-            <Classification
-              show={!!singleVirus.realm}
-              singleVirus={singleVirus}
-            />
+      <div className="grid sm:grid-cols-2 mx-5 sm:mx-30 mt-5 sm:mt-0">
+        <div className="w-full aspect-square z-10">
+          <img
+            src={`/viruses/${singleVirus.image}`}
+            alt="nothing for now"
+            className="drop-shadow-xl/20"
+          />
+          {/* <Image
+            src={`/viruses/${singleVirus.image}`}
+            alt={singleVirus.virusName}
+            className="object-cover object-center w-full"
+            fill
+            sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
+            // priority={priority && id <= 2}
+            quality={75}
+          /> */}
+        </div>
+        <div className="flex flex-col justify-center gap-5 sm:pl-10 mt-3 sm:mt-0">
+          <div>
+            <h1 className="font-grotesk uppercase font-black text-5xl sm:text-7xl md:text-8xl xl:text-9xl lg:text-[12vw] text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+              {singleVirus.virusName}
+            </h1>
+            <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
           </div>
+          <div className="w-40 sm:w-auto">
+            <div className="order-1 md:order-1 w-fit max-w-60">
+              <div className="uppercase text-3xl lg:text-5xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
+                € {Number(singleVirus.price).toFixed(2)}
+              </div>
 
-          <div className="order-1 md:order-1 w-1/2">
-            <div className="uppercase text-4xl lg:text-6xl text-center text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
-              € {Number(singleVirus.price).toFixed(2)}
+              <AddToCart virusId={singleVirus.id} />
             </div>
-
-            <AddToCart virusId={singleVirus.id} />
           </div>
         </div>
+      </div>
+
+      <div className="bg-black/50 mt-7 sm:-mt-25 pt-5 sm:pt-20 pb-10 sm:pb-20 px-5 sm:px-40 backdrop-blur-xs drop-shadow-xl/20">
+        <h3 className="font-grotesk font-bold uppercase text-2xl tracking-wider mb-3">
+          {singleVirus.virusName}
+        </h3>
+        <p>{singleVirus.virusDesc}</p>
       </div>
     </div>
   );
