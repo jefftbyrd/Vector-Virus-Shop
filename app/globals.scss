@@ -13,6 +13,7 @@
   --color-foreground: #3bb6ff;
   --color-middle-green: #185d4e;
   --color-harsh-blue: #0000ff;
+  --color-middle2-green: #1e7663;
 }
 
 :root {
@@ -21,6 +22,7 @@
   --primary: #3acda8;
   --dark-green: #0e372e;
   --middle-green: #185d4e;
+  --middle2-green: #1e7663;
   --light-blue: #3bb6ff;
   --light-green: #3acda8;
   --shadow: 1px 1px 2px black;
@@ -41,7 +43,7 @@
 }
 
 .pageTitle {
-  @apply font-grotesk text-6xl lg:text-7xl xl:text-9xl uppercase font-black mb-5 sm:mb-10;
+  @apply font-grotesk text-6xl lg:text-7xl xl:text-9xl uppercase font-black mb-5 sm:mb-10 relative z-30;
 }
 
 a {
