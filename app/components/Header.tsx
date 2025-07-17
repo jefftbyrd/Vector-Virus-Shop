@@ -16,23 +16,16 @@ export default async function Header() {
 
   return (
     <header className="">
-      <div className="bg-dark-green h-16 hidden sm:block">
+      <div className="h-16 hidden sm:block">
         <Link href="/">
-          <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-b-2 pb-1 border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out">
+          {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-b-2 pb-1 border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out"> */}
+          {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black hover:text-white transition-all duration-200 ease-in-out bg-gradient-to-b from-white to-middle2-green bg-clip-text text-transparent drop-shadow-md/30"> */}
+          <h3 className="absolute top-2 left-5 xl:top-4 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out drop-shadow-md/30">
             Vector
           </h3>
         </Link>
-        <div className="normalMenu hidden top-0 right-0 sm:flex absolute top-0 z-100  items-center h-18">
-          {/* <div className="flex flex-row h-full bg-light-green items-center logoContainer text-dark-green">
-            <Link href="/">
-              <h2 className="lowercase font-grotesk text-[1.7rem] leading-none tracking-[0.3rem] font-black h-full px-4 -translate-y-1">
-                Vector
-              </h2>
-            </Link>
-          </div> */}
-
-          {/* <nav className="flex flex-row h-full bg-harsh-blue gap-5 uppercase tracking-wider text-white border-b-1 border-r-1 items-center px-10"> */}
-          <nav className="flex flex-row h-full gap-5 text-lg uppercase tracking-widest items-center px-10 font-black text-light-green border-b-1 border-light-green/50">
+        <div className="normalMenu hidden top-0 right-0 sm:flex absolute z-20 items-center h-14 md:h-18">
+          <nav className="flex flex-row h-full sm:text-md md:text-lg uppercase tracking-widest items-center px-5 md:px-10 font-black text-white border-b-1 border-light-green/30">
             <Link href="/viruses">
               <div className="hoverHeader">Viruses</div>
             </Link>
