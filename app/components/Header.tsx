@@ -20,7 +20,7 @@ export default async function Header() {
         <Link href="/">
           {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-b-2 pb-1 border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out"> */}
           {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black hover:text-white transition-all duration-200 ease-in-out bg-gradient-to-b from-white to-middle2-green bg-clip-text text-transparent drop-shadow-md/30"> */}
-          <h3 className="absolute top-2 left-5 xl:top-4 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out drop-shadow-md/30">
+          <h3 className="absolute top-2 left-5 xl:top-3 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out drop-shadow-md/30">
             Vector
           </h3>
         </Link>
@@ -32,7 +32,7 @@ export default async function Header() {
             <Link href="/about">About</Link>
             <Link href="/cart" data-test-id="cart-link">
               Cart:{' '}
-              <span data-test-id="cart-count">
+              <span data-test-id="cart-count" className="font-thin lowercase">
                 {`[${totalCartItems ? totalCartItems : 'empty'}]`}
               </span>
             </Link>
