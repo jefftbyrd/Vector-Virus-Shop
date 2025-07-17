@@ -18,9 +18,7 @@ export default async function Header() {
     <header className="">
       <div className="h-16 hidden sm:block">
         <Link href="/">
-          {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-b-2 pb-1 border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out"> */}
-          {/* <h3 className="absolute top-2 left-5 lowercase font-grotesk text-4xl tracking-widest font-black hover:text-white transition-all duration-200 ease-in-out bg-gradient-to-b from-white to-middle2-green bg-clip-text text-transparent drop-shadow-md/30"> */}
-          <h3 className="absolute top-2 left-5 xl:top-3 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out drop-shadow-md/30">
+          <h3 className="absolute top-2 left-5 xl:top-3 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green transition-all duration-200 ease-in-out drop-shadow-md/30 ">
             Vector
           </h3>
         </Link>
