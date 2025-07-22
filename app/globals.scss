@@ -78,7 +78,7 @@ p {
 /* HEADER */
 
 header {
-  @apply bg-light-green sm:bg-transparent w-full z-100 fixed sm:static;
+  @apply z-100 fixed sm:static;
 
   .burgerMenu {
     @apply sm:hidden;
@@ -107,12 +107,12 @@ header {
     }
 
     .bm-burger-button {
-      @apply fixed left-5 top-7 h-5 w-5 sm:hidden;
+      @apply fixed h-5 w-5 sm:hidden;
     }
 
-    .bm-burger-bars {
-      @apply bg-background;
-    }
+    // .bm-burger-bars {
+    //   @apply bg-light-green;
+    // }
 
     .bm-cross-button {
       height: 24px;
@@ -144,6 +144,7 @@ header {
     transparent 1px,
     transparent 13px
   );
+  @apply relative;
 }
 
 .newArrivals {
