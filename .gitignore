@@ -42,3 +42,4 @@ next-env.d.ts
 .eslintcache
 app/cart/actions-anotated.ts
 app/viruses/\[virusId]/page-prev.tsx
+app/components/BurgerMenu-old.jsx
