@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import BigLogoDesktop from './BigLogoDesktop';
+import BigLogoMobile from './BigLogoMobile';
 import BurgerMenu from './BurgerMenu';
 
 export default async function Header() {
@@ -15,7 +17,10 @@ export default async function Header() {
   );
 
   return (
-    <header className="">
+    <header className="z-100 sm:static">
+      <BigLogoMobile />
+      <BigLogoDesktop />
+      <BurgerMenu totalCartItems={totalCartItems} />
       <div className="h-16 hidden sm:block">
         <Link href="/">
           <h3 className="absolute top-2 left-5 xl:top-3 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green hover:scale-105 transition-all duration-200 ease-in-out drop-shadow-md/30">
@@ -38,7 +43,6 @@ export default async function Header() {
           </nav>
         </div>
       </div>
-      <BurgerMenu totalCartItems={totalCartItems} />
     </header>
   );
 }
