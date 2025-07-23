@@ -78,7 +78,7 @@ p {
 /* HEADER */
 
 header {
-  @apply z-100 fixed sm:static;
+  // @apply z-100 sm:static;
 
   .burgerMenu {
     @apply sm:hidden;
@@ -107,7 +107,7 @@ header {
     }
 
     .bm-burger-button {
-      @apply fixed h-5 w-5 sm:hidden;
+      @apply fixed h-4 w-4 sm:hidden;
     }
 
     // .bm-burger-bars {
