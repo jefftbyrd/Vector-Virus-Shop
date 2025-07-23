@@ -24,8 +24,8 @@ export default function Home() {
           />
         </div>
       </div> */}
-      <BigLogoMobile />
-      <BigLogoDesktop />
+      {/* <BigLogoMobile />
+      <BigLogoDesktop /> */}
       <div className="pt-[40vw] sm:pt-0">
         <Featured />
         <News />
