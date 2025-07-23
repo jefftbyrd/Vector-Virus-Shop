@@ -7,6 +7,7 @@ import {
 } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
@@ -14,7 +15,10 @@ const BurgerMenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [burgerColor, setBurgerColor] = useState('#0e372e');
   const [burgerX, setBurgerX] = useState('3vw');
-  const [burgerY, setBurgerY] = useState('4vw');
+  const [burgerY, setBurgerY] = useState('6vw');
+
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const handleStateChange = (state) => {
     setIsOpen(state.isOpen);
@@ -25,32 +29,51 @@ const BurgerMenu = (props) => {
   };
 
   const { scrollY } = useScroll();
+
+  // Always create transforms, but use static values on non-homepage
   const burgerBarsColor = useTransform(
     scrollY,
     [0, 100],
-    ['#1e7663', '#3acda8'],
+    isHomePage ? ['#1e7663', '#3acda8'] : ['#1e7663', '#1e7663'],
   );
-  const burgerPositionX = useTransform(scrollY, [0, 100], ['3vw', '3vw']);
-  const burgerPositionY = useTransform(scrollY, [0, 100], ['4vw', '4.5vw']);
+  const burgerPositionX = useTransform(
+    scrollY,
+    [0, 100],
+    isHomePage ? ['3vw', '3vw'] : ['3vw', '3vw'],
+  );
+  const burgerPositionY = useTransform(
+    scrollY,
+    [0, 100],
+    isHomePage ? ['6vw', '3.5vw'] : ['6vw', '6vw'],
+  );
 
-  // Convert MotionValue to regular state
+  // Always call hooks, but only update state on homepage
   useMotionValueEvent(burgerBarsColor, 'change', (latest) => {
-    setBurgerColor(latest);
+    if (isHomePage) {
+      setBurgerColor(latest);
+    }
   });
 
   useMotionValueEvent(burgerPositionX, 'change', (latest) => {
-    setBurgerX(latest);
+    if (isHomePage) {
+      setBurgerX(latest);
+    }
   });
 
   useMotionValueEvent(burgerPositionY, 'change', (latest) => {
-    setBurgerY(latest);
+    if (isHomePage) {
+      setBurgerY(latest);
+    }
   });
 
   const burgerStyles = {
     bmBurgerBars: {
       background: burgerColor,
     },
-    bmBurgerButton: { left: burgerX, top: burgerY },
+    bmBurgerButton: {
+      left: burgerX,
+      top: burgerY,
+    },
   };
 
   return (
