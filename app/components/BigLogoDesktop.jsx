@@ -1,10 +1,19 @@
 'use client';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function BigLogoDesktop() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
-    <div className="mb-10 lg:mt-12 sm:mb-14 md:mb-21  lg:mb-27 xl:mb-55 hidden sm:block">
-      <h1 className="font-grotesk font-black lg:justify-self-center text-center lowercase text-[#3acda8] text-[30vw] lg:text-[26vw] leading-none lg:leading-[12vw] -z-1">
+    <div
+      className="mb-0 mt-12 lg:mt-24 sm:mb-0 md:mb-21 lg:mb-18 xl:mb-12 2xl:mb-46 hidden sm:block"
+      style={{
+        display: isHomePage ? 'block' : 'none',
+      }}
+    >
+      <h1 className="font-grotesk font-black lg:justify-self-center text-center lowercase text-[#3acda8] text-[30vw] lg:text-[26vw] leading-none lg:leading-[12vw] -z-10">
         Vector
       </h1>
       <div className="sm:mt-[0vh] lg:mt-[6vh] xl:mt-[9vh] text-right -translate-x-[18.5vw] text-[3.7vw] text-white -z-10 uppercase font-thin font-grotesk">
