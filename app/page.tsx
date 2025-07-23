@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import BigLogo from './components/BigLogo';
+import BigLogoDesktop from './components/BigLogoDesktop';
+import BigLogoMobile from './components/BigLogoMobile';
 import Featured from './components/Featured';
 import News from './components/News';
 
@@ -23,8 +24,9 @@ export default function Home() {
           />
         </div>
       </div> */}
-      <BigLogo />
-      <div className="pt-[40vw]">
+      <BigLogoMobile />
+      <BigLogoDesktop />
+      <div className="pt-[40vw] sm:pt-0">
         <Featured />
         <News />
       </div>
