@@ -43,3 +43,6 @@ next-env.d.ts
 app/cart/actions-anotated.ts
 app/viruses/\[virusId]/page-prev.tsx
 app/components/BurgerMenu-old.jsx
+app/components/BurgerMenuStatic.jsx
+app/components/BigLogoMobileStatic.jsx
+app/components/BigLogoDesktopMod.jsx
