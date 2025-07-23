@@ -20,7 +20,7 @@ const BurgerMenu = (props) => {
     isHomePage ? '#3acda8' : '#3acda8',
   );
   const [burgerX, setBurgerX] = useState('3vw');
-  const [burgerY, setBurgerY] = useState(isHomePage ? '14px' : '14px');
+  const [burgerY, setBurgerY] = useState(isHomePage ? '16px' : '16px');
 
   const handleStateChange = (state) => {
     setIsOpen(state.isOpen);
@@ -46,7 +46,7 @@ const BurgerMenu = (props) => {
   const burgerPositionY = useTransform(
     scrollY,
     [0, 100],
-    isHomePage ? ['14px', '14px'] : ['14px', '14px'],
+    isHomePage ? ['16px', '16px'] : ['16px', '16px'],
   );
 
   // Always call hooks, but only update state on homepage

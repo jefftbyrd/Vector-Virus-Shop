@@ -63,23 +63,9 @@ p {
   @apply text-3xl sm:text-xl lg:text-4xl font-ddin font-thin text-white text-shadow-md text-shadow-dark-green ml-5 sm:ml-5 lg:ml-10 tracking-wider;
 }
 
-// .subGrid {
-//   grid-template-columns: subgrid;
-//   grid-template-rows: subgrid;
-//   display: grid;
-//   grid-template-areas: 'inside';
-//   margin-bottom: 70px;
-// }
-
-// .subGridSingleVirus {
-//   @apply overflow-hidden relative;
-// }
-
 /* HEADER */
 
 header {
-  // @apply z-100 sm:static;
-
   .burgerMenu {
     @apply sm:hidden;
 
@@ -107,7 +93,7 @@ header {
     }
 
     .bm-burger-button {
-      @apply fixed h-4 w-4 sm:hidden;
+      @apply fixed h-5 w-5 sm:hidden;
     }
 
     // .bm-burger-bars {
