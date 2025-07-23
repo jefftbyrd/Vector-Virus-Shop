@@ -64,21 +64,33 @@ export default function BigLogoMobile() {
           }}
         >
           <motion.h1
-            className="font-grotesk font-black lg:justify-self-center sm:text-center lowercase text-[#3acda8] text-[24vw] sm:text-[30vw] lg:text-[26vw] leading-none lg:leading-[12vw] -z-10 h-fit w-fit m-auto"
+            className="font-grotesk font-black lg:justify-self-center sm:text-center lowercase text-[#3acda8] text-[24vw] sm:text-[30vw] lg:text-[26vw] leading-none lg:leading-[12vw] h-fit w-fit m-auto"
             // style={{ color: logoColor }}
           >
-            <Link href="/">Vector</Link>
+            <Link
+              href="/"
+              className="z-50 cursor-pointer"
+              style={{ pointerEvents: 'auto' }}
+            >
+              Vector
+            </Link>
           </motion.h1>
 
           <motion.div
             className="absolute right-[8vw] sm:mt-[0vh] lg:mt-[6vh] xl:mt-[9vh] text-[5vw] text-white -z-10 uppercase font-normal font-grotesk leading-none"
-            style={{ opacity: bigVirusOpacity }}
+            style={{
+              opacity: bigVirusOpacity,
+              display: isHomePage ? 'block' : 'none',
+            }}
           >
             The virus shop
           </motion.div>
           <motion.div
             className="absolute z-10 sm:top-[18vh] sm:top-[20vh] md:top-[23vh] xl:top-[21vh] 2xl:top-[24vh] sm:left-[21.5vw] md:left-[21.5vw] lg:left-[23.6vw] w-1/3  -translate-y-[15vw] translate-x-[22vw]"
-            style={{ opacity: bigVirusOpacity }}
+            style={{
+              opacity: bigVirusOpacity,
+              display: isHomePage ? 'block' : 'none',
+            }}
           >
             <Image
               src="/viruses/adenovirus-home.webp"
