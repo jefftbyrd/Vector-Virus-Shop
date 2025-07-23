@@ -12,13 +12,15 @@ import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
 const BurgerMenu = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [burgerColor, setBurgerColor] = useState('#0e372e');
-  const [burgerX, setBurgerX] = useState('3vw');
-  const [burgerY, setBurgerY] = useState('6vw');
-
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [burgerColor, setBurgerColor] = useState(
+    isHomePage ? '#3acda8' : '#3acda8',
+  );
+  const [burgerX, setBurgerX] = useState('3vw');
+  const [burgerY, setBurgerY] = useState(isHomePage ? '14px' : '14px');
 
   const handleStateChange = (state) => {
     setIsOpen(state.isOpen);
@@ -34,7 +36,7 @@ const BurgerMenu = (props) => {
   const burgerBarsColor = useTransform(
     scrollY,
     [0, 100],
-    isHomePage ? ['#1e7663', '#3acda8'] : ['#1e7663', '#1e7663'],
+    isHomePage ? ['#3acda8', '#3acda8'] : ['#3acda8', '#3acda8'],
   );
   const burgerPositionX = useTransform(
     scrollY,
@@ -44,7 +46,7 @@ const BurgerMenu = (props) => {
   const burgerPositionY = useTransform(
     scrollY,
     [0, 100],
-    isHomePage ? ['6vw', '3.5vw'] : ['6vw', '6vw'],
+    isHomePage ? ['14px', '14px'] : ['14px', '14px'],
   );
 
   // Always call hooks, but only update state on homepage
