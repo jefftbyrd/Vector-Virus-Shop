@@ -212,8 +212,6 @@ header {
 /* SINGLE VIRUS PAGE */
 
 .addToCartButton {
-  // border-radius: 10px;
-  // border: 1px var(--light-green) solid;
   @apply mt-3 bg-light-blue w-auto w-full tracking-wider text-dark-green font-black font-ddin text-xl uppercase py-2;
 }
 
@@ -462,7 +460,3 @@ header {
 .normalMenu .logoContainer {
   @apply hover:bg-light-blue hover:text-white transition-all duration-200 ease-in-out;
 }
-
-// .burgerMenu a {
-//   @apply hover:bg-light-blue hover:text-white transition-all duration-200 ease-in-out;
-// }
