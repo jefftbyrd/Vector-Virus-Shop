@@ -15,7 +15,12 @@ export default async function Featured() {
   return (
     <div className="featured pt-5 pb-10 w-full">
       <h2 className="special">Featured Viruses</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 xl:gap-20 px-5 py-5 xl:px-35 md:py-8">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 gap-5 xl:gap-20 px-5 py-5 xl:px-35 md:py-8 [&>*:last-child:nth-child(odd)]:hidden
+            sm:[&>*:last-child:nth-child(odd)]:block
+            sm:[&>*:nth-child(3n+1):nth-last-child(-n+2)]:hidden
+            sm:[&>*:nth-child(3n+2):nth-last-child(-n+1)]:hidden"
+      >
         {featuredViruses.map((virus) => {
           return (
             <div key={`virusId-${virus.id}`} className="">
@@ -34,9 +39,9 @@ export default async function Featured() {
                   />
                 </div>
               </Link>
-              <p className="line-clamp-3 w-3/4 m-auto text-center font-ddin text-sm">
+              {/* <p className="line-clamp-3 w-3/4 m-auto text-center font-ddin text-sm">
                 {virus.virusDesc}
-              </p>
+              </p> */}
             </div>
           );
         })}
