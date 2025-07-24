@@ -26,7 +26,6 @@ export const viruses = [
     virus_desc:
       'Yellow fever is a viral disease that was first described in the mid-sixteenth century in Yucatán, Mexico. It is caused by yellow fever virus, an arbovirus (a virus transmitted by an insect vector) isolated in 1927, simultaneously in Ghana and at the Institut Pasteur de Dakar, Senegal. The disease is endemic in Africa and in Central and South America. The case fatality rate is high, fluctuating between 20 and 60% from one outbreak to the next. There is a safe, effective vaccine which provides long-term protection. The disease is re-emerging in some African and South American countries with poor vaccine coverage.',
     new: 1,
-    featured: 1,
   },
   {
     virus_name: 'Mpox',
@@ -51,6 +50,7 @@ export const viruses = [
     virus_desc:
       'Poliovirus infects human cells by binding to an immunoglobulin-like receptor, CD155 (also known as the poliovirus receptor or PVR) on the cell surface.Interaction of poliovirus and CD155 facilitates an irreversible conformational change of the viral particle necessary for viral entry. Following attachment to the host cell membrane, entry of the viral nucleic acid was thought to occur one of two ways: via the formation of a pore in the plasma membrane through which the RNA is then "injected" into the host cell cytoplasm, or via virus uptake by receptor-mediated endocytosis. Recent experimental evidence supports the latter hypothesis and suggests that poliovirus binds to CD155 and is taken up by endocytosis. Immediately after internalization of the particle, the viral RNA is released.',
     new: 1,
+    featured: 1,
     realm: 'Riboviria',
     kingdom: 'Orthornavirae',
     phylum: 'Pisuviricota',
@@ -81,6 +81,7 @@ export const viruses = [
     virus_desc:
       'Dengue virus (DENV) is the cause of dengue fever. It is a mosquito-borne, single positive-stranded RNA virus of the family Flaviviridae; genus Flavivirus.Four serotypes of the virus have been found, and a reported fifth has yet to be confirmed,all of which can cause the full spectrum of disease.Nevertheless, the mainstream scientific communitys understanding of dengue virus may be simplistic as, rather than distinct antigenic groups, a continuum appears to exist. This same study identified 47 strains of dengue virus.Additionally, coinfection with and lack of rapid tests for Zika virus and chikungunya complicate matters in real-world infections.',
     new: 1,
+    featured: 1,
     realm: 'Riboviria',
     kingdom: 'Orthornavirae',
     phylum: 'Kitrinoviricota',
@@ -127,7 +128,6 @@ export const viruses = [
     price: 777.0,
     virus_desc:
       'The rhinovirus (from the Ancient Greek: ῥίς, romanized: rhis "nose", gen ῥινός, romanized: rhinos "of the nose", and the Latin: vīrus) is a positive-sense, single-stranded RNA virus belonging to the genus Enterovirus in the family Picornaviridae. Rhinovirus is the most common viral infectious agent in humans and is the predominant cause of the common cold.',
-    featured: 1,
   },
   {
     virus_name: 'Simian Virus',
