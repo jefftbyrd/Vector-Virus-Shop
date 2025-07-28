@@ -5,18 +5,24 @@ import { updateCartQuantity } from './actions';
 interface UpdateProps {
   cartItemQuantity: number;
   cartItemId: number;
+  removeItem: (cartItemId: number) => void;
 }
 
 export default function Update(props: UpdateProps) {
   const [quantity, setQuantity] = useState(props.cartItemQuantity);
+
   return (
     <form className="w-25 sm:w-50">
       <div className="quantityController">
         <button
           className="quantityButton"
-          onClick={() => setQuantity(quantity - 1)}
-          formAction={() =>
-            updateCartQuantity(props.cartItemId, Number(quantity))
+          formAction={
+            quantity <= 1
+              ? () => props.removeItem(props.cartItemId)
+              : async () => {
+                  setQuantity(quantity - 1);
+                  await updateCartQuantity(props.cartItemId, quantity - 1);
+                }
           }
         >
           -
@@ -28,15 +34,21 @@ export default function Update(props: UpdateProps) {
           type="number"
           min="1"
           onChange={(event) => {
-            setQuantity(Number(event.currentTarget.value));
+            const newValue = Number(event.currentTarget.value);
+            if (newValue <= 0) {
+              props.removeItem(props.cartItemId);
+            } else {
+              setQuantity(newValue);
+            }
           }}
         />
+
         <button
           className="quantityButton"
-          onClick={() => setQuantity(quantity + 1)}
-          formAction={() =>
-            updateCartQuantity(props.cartItemId, Number(quantity))
-          }
+          formAction={async () => {
+            setQuantity(quantity + 1);
+            await updateCartQuantity(props.cartItemId, quantity + 1);
+          }}
         >
           +
         </button>

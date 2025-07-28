@@ -6,7 +6,7 @@ import type { Virus } from '../../database/viruses';
 import { getVirusesInsecure } from '../../database/viruses';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { CartTotal } from './actions';
+import { CartTotal, removeItem } from './actions';
 import RemoveFromCart from './RemoveFromCart';
 import UpdateCart from './UpdateCart';
 
@@ -130,6 +130,7 @@ export default async function CartPage() {
             <UpdateCart
               cartItemId={Number(cartItem.id)}
               cartItemQuantity={Number(cartItem.quantity)}
+              removeItem={removeItem}
             />
             <RemoveFromCart cartItemId={Number(cartItem.id)} />
           </div>
