@@ -13,7 +13,7 @@ export default function AddToCart(props: Props) {
       <div className="quantityController">
         <button
           className="quantityButton"
-          formAction={() => setQuantity(quantity - 1)}
+          formAction={() => setQuantity(Math.max(1, quantity - 1))}
         >
           -
         </button>
@@ -24,7 +24,10 @@ export default function AddToCart(props: Props) {
           value={Number(quantity)}
           type="number"
           min="1"
-          onChange={(event) => setQuantity(Number(event.currentTarget.value))}
+          onChange={(event) => {
+            const newValue = Number(event.currentTarget.value);
+            setQuantity(Math.max(1, newValue || 1));
+          }}
         />
 
         <button
