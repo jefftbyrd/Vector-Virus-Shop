@@ -153,13 +153,15 @@ export default async function SingleVirusPage(props: PageProps) {
             </h1>
             <Tagline show={!!singleVirus.tagline} singleVirus={singleVirus} />
           </div>
-          <div className="w-40 lg:w-50 xl:w-auto">
-            <div className="order-1 md:order-1 w-fit max-w-60">
+          <div className="w-40 lg:w-50 xl:w-auto ">
+            <div className="order-1 md:order-1 w-fit max-w-60 flex flex-col gap-5">
               <div className="uppercase text-3xl lg:text-5xl text-white [text-shadow:0_0_1px_rgba(0,0,0,0.5),0_0_2px_rgba(0,0,0,0.3)]">
                 € {Number(singleVirus.price).toFixed(2)}
               </div>
 
-              <AddToCart virusId={singleVirus.id} />
+              <div>
+                <AddToCart virusId={singleVirus.id} />
+              </div>
             </div>
           </div>
         </div>
