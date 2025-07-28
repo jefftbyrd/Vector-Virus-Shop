@@ -9,6 +9,7 @@
   --color-background: #0e372e;
   --color-light-green: #3acda8;
   --color-light-blue: #3bb6ff;
+  --color-light-blue-hover: #00a2ff;
   --color-dark-green: #0e372e;
   --color-foreground: #3bb6ff;
   --color-middle-green: #185d4e;
@@ -24,6 +25,7 @@
   --middle-green: #185d4e;
   --middle2-green: #1e7663;
   --light-blue: #3bb6ff;
+  --color-light-blue-hover: #00a2ff;
   --light-green: #3acda8;
   --shadow: 1px 1px 2px black;
   --shadow-big: 2px 2px 4px black;
@@ -212,7 +214,7 @@ header {
 /* SINGLE VIRUS PAGE */
 
 .addToCartButton {
-  @apply mt-3 bg-light-blue w-auto w-full tracking-wider text-dark-green font-black font-ddin text-xl uppercase py-2;
+  @apply mt-2 bg-light-blue w-auto w-full tracking-wider text-dark-green font-black font-ddin text-xl uppercase py-2 hover:bg-light-blue-hover hover:text-white transition-all;
 }
 
 .quantityController {
@@ -231,7 +233,7 @@ header {
   }
 
   .quantityButton {
-    @apply text-dark-green bg-light-green/100 text-3xl/0 aspect-square font-normal;
+    @apply text-dark-green bg-light-green/100 text-3xl/0 aspect-square font-normal  hover:text-white transition-all;
   }
 }
 
@@ -416,6 +418,11 @@ header {
 
   li {
     @apply mb-2;
+  }
+
+  a,
+  li {
+    @apply hover:text-white cursor-pointer;
   }
 }
 
