@@ -28,7 +28,7 @@ export default function BigLogoMobile() {
   const headerHeight = useTransform(
     scrollY,
     [0, 100],
-    isHomePage ? ['40vw', '13vw'] : ['13vw', '13vw'],
+    isHomePage ? ['42vw', '13vw'] : ['13vw', '13vw'],
   );
   const bgColorShift = useTransform(
     scrollY,
