@@ -4,13 +4,13 @@ export default function Footer() {
       <div>
         <h3>Navigation</h3>
         <ul>
-          <li>
+          {/* <li>
             <a href="/new-arrivals">New Arrivals</a>
-          </li>
+          </li> */}
           <li>
             <a href="/viruses">All Viruses</a>
           </li>
-          <li>Featured</li>
+          <li>Featured Viruses</li>
         </ul>
       </div>
       <div>
@@ -38,7 +38,7 @@ export default function Footer() {
         <form className="newsletter">
           <label className="flex flex-col gap-2">
             <input type="email" placeholder="email address" required />
-            <button className="px-3 py-2 bg-light-blue text-dark-green uppercase font-bold font-ddin rounded-lg text-sm sm:text-lg w-3/4 lg:w-1/2">
+            <button className="px-3 py-2 bg-light-blue text-dark-green uppercase font-bold font-ddin rounded-lg text-sm sm:text-lg w-3/4 lg:w-1/2 hover:bg-light-blue-hover hover:text-white transition-all">
               Subscribe
             </button>
           </label>
