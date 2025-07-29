@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 import type { Virus } from '../../../database/viruses';
 import { getVirusInsecure } from '../../../database/viruses';
+import Recommended from '../../components/Recommended';
 import AddToCart from './AddToCart';
 
 interface PageProps {
@@ -166,13 +167,14 @@ export default async function SingleVirusPage(props: PageProps) {
           </div>
         </div>
       </div>
-
       <div className="bg-black/50 mt-7 md:-mt-15 lg:-mt-25 pt-5 sm:pt-10 md:pt-17 lg:pt-26 pb-10 md:pb-20 px-5 sm:px-20 xl:px-30 2xl:px-40 backdrop-blur-xs drop-shadow-xl/20">
         <h3 className="font-grotesk font-regular uppercase text-2xl tracking-wider mb-3">
           What is <span className="border-b-1">{singleVirus.virusName}</span>?
         </h3>
         <p>{singleVirus.virusDesc}</p>
       </div>
+      {/* <div className="bg-linear-to-b from-black/50 to-[rgba(0, 0, 0, 0.2)] h-10 absolute w-full" /> */}
+      <Recommended />
     </div>
   );
 }
