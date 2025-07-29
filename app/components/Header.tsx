@@ -18,10 +18,11 @@ export default async function Header() {
 
   return (
     <header className="z-100 sm:static">
+      <div className="bg-linear-to-b from-black/20 via-dark-green to-dark-green h-35 w-full absolute top-0 -z-100" />
       <BigLogoMobile />
       <BigLogoDesktop />
       <BurgerMenu totalCartItems={totalCartItems} />
-      <div className="h-16 hidden sm:block">
+      <div className="h-16 hidden sm:block ">
         <Link href="/">
           <h3 className="absolute top-2 left-5 xl:top-3 xl:left-6 lowercase font-grotesk text-4xl tracking-widest font-black text-light-green border-white hover:text-white hover:border-light-green hover:scale-105 transition-all duration-200 ease-in-out drop-shadow-md/30">
             Vector
