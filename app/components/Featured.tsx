@@ -13,7 +13,7 @@ export default async function Featured() {
   });
 
   return (
-    <div className="featured pt-5 pb-10 w-full">
+    <div className="featured pt-10 pb-10 w-full">
       <h2 className="special">Featured Viruses</h2>
       <div
         className="grid grid-cols-2 sm:grid-cols-3 gap-5 xl:gap-20 px-5 py-5 xl:px-35 md:py-8 [&>*:last-child:nth-child(odd)]:hidden
