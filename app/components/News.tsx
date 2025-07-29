@@ -3,10 +3,10 @@
 
 export default function News() {
   return (
-    <div className="pt-5">
+    <div className="pt-8 sm:pt-10 pb-5 sm:pb-10">
       <h2 className="special">Latest News</h2>
 
-      <div className="news">
+      <div className="news sm:mt-5">
         <div className="newsItems">
           <a href="/">
             <div className="item">
