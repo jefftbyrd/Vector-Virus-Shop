@@ -50,7 +50,7 @@ export default async function Recommended(props: Props) {
                       alt={virus.virusName}
                       className="object-cover object-center inset-0"
                       fill
-                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      sizes="(min-width: 1024px) 20vw"
                       quality={55}
                       loading={
                         virus === recommendedViruses[0] ||
