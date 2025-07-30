@@ -35,16 +35,12 @@ export default function BigLogoMobile() {
     [0, 100],
     isHomePage ? ['#0e372e', '#185d4e'] : ['#185d4e', '#185d4e'],
   );
-  // const logoColor = useTransform(
-  //   scrollY,
-  //   [0, 100],
-  //   isHomePage ? ['#3acda8', '#082922'] : ['#3acda8', '#3acda8'],
-  // );
-  const headerSpace = isHomePage ? ['0px'] : ['60px'];
+
+  const headerSpace = isHomePage ? '0px' : '60px';
 
   return (
     <div
-      className="relative "
+      className="relative"
       style={{
         height: headerSpace,
       }}
