@@ -1,20 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Virus } from '../../database/viruses';
 import { getVirusesInsecure } from '../../database/viruses';
 
-export default async function Recommended() {
-  const viruses = await getVirusesInsecure();
+type Props = {
+  id: number;
+};
 
-  const shuffleArray = (array) => {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
+export default async function Recommended(props: Props) {
+  const viruses: Virus[] = await getVirusesInsecure();
+
+  const getRecommendedViruses = (
+    viruses: Virus[],
+    excludeId: number,
+    count: number = 4,
+  ): Virus[] => {
+    const filtered = viruses.filter((virus) => virus.id !== excludeId);
+
+    // Fisher-Yates shuffle
+    for (let i = filtered.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
     }
-    return newArray;
+
+    return filtered.slice(0, count);
   };
 
-  const recommendedViruses = shuffleArray(viruses).slice(0, 4);
+  const recommendedViruses = getRecommendedViruses(viruses, props.id);
 
   return (
     <>
@@ -38,8 +50,14 @@ export default async function Recommended() {
                       alt={virus.virusName}
                       className="object-cover object-center inset-0"
                       fill
-                      sizes="(min-width: 3840px) 100vw, (min-width: 2560px) 850px, (min-width: 1920px) 800px, (min-width: 1280px) 430px, (min-width: 768px) 350px, 100vw"
-                      quality={75}
+                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      quality={55}
+                      loading={
+                        virus === recommendedViruses[0] ||
+                        virus === recommendedViruses[1]
+                          ? 'eager'
+                          : 'lazy'
+                      }
                     />
                   </div>
                   <h3 className="z-10 text-white text-xl text-center sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl xl 2xl:text-4xl font-grotesk text-shadow-lg/50 uppercase">
@@ -57,7 +75,6 @@ export default async function Recommended() {
             </h2>
           </Link>
         </div>
-        {/* <div className="bg-linear-to-b from-[rgba(0, 0, 0, 0.2)] to-black/50 h-90 absolute z-0 bottom-0  w-full" /> */}
       </div>
     </>
   );
