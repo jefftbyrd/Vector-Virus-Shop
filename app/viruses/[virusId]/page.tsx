@@ -25,10 +25,10 @@ interface TaglineProps {
   singleVirus: Virus;
 }
 
-interface ClassificationProps {
-  show: boolean;
-  singleVirus: Virus;
-}
+// interface ClassificationProps {
+//   show: boolean;
+//   singleVirus: Virus;
+// }
 
 export async function generateMetadata(props: GenerateMetadataProps) {
   const params = await props.params;
