@@ -3,8 +3,6 @@ import Link from 'next/link';
 import type { Virus } from '../../database/viruses';
 import { getVirusesInsecure } from '../../database/viruses';
 
-// import { smartImageLoader } from '../../util/imageLoader';
-
 type Props = {
   id: number;
 };
@@ -54,8 +52,6 @@ export default async function Recommended(props: Props) {
                       fill
                       sizes="(min-width: 1024px) 20vw, 40vw"
                       quality={55}
-                      // loader={smartImageLoader}
-                      unoptimized={true}
                       loading={
                         virus === recommendedViruses[0] ||
                         virus === recommendedViruses[1]
