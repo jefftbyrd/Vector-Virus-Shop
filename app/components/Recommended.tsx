@@ -20,7 +20,7 @@ export default async function Recommended(props: Props) {
     // Fisher-Yates shuffle
     for (let i = filtered.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+      [filtered[i], filtered[j]] = [filtered[j]!, filtered[i]!];
     }
 
     return filtered.slice(0, count);
