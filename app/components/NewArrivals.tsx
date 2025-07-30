@@ -11,8 +11,6 @@ export default async function NewArrivals() {
     return virus;
   });
 
-  console.log('viruses', viruses);
-
   return (
     <div className="subGrid">
       <div className="inside">
