@@ -1,12 +1,19 @@
 'use client';
 import { useMotionValueEvent, useScroll, useTransform } from 'motion/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
-const BurgerMenu = (props) => {
+type Props = {
+  totalCartItems: number;
+};
+
+type State = {
+  isOpen: boolean;
+};
+
+const BurgerMenu = (props: Props) => {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
@@ -17,7 +24,7 @@ const BurgerMenu = (props) => {
   const [burgerX, setBurgerX] = useState('3vw');
   const [burgerY, setBurgerY] = useState(isHomePage ? '16px' : '16px');
 
-  const handleStateChange = (state) => {
+  const handleStateChange = (state: State) => {
     setIsOpen(state.isOpen);
   };
 
