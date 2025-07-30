@@ -24,7 +24,7 @@ export default async function Viruses() {
               <Link className="virusItem" href={`/viruses/${virus.id}`}>
                 <div className="relative w-full aspect-square">
                   <Image
-                    src={`/viruses/${virus.image}?v=2`}
+                    src={`/viruses/${virus.image}`}
                     alt={virus.virusName}
                     className="object-cover object-center w-fit sm:p-5"
                     fill
