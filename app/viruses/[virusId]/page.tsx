@@ -58,47 +58,47 @@ function Tagline(props: TaglineProps) {
   );
 }
 
-function Classification(props: ClassificationProps) {
-  if (!props.show) {
-    return null;
-  }
-  return (
-    <div className="classification">
-      <div>
-        Realm
-        <span>{props.singleVirus.realm}</span>
-      </div>
-      <div>
-        Kingdom
-        <span>{props.singleVirus.kingdom}</span>
-      </div>
-      <div>
-        Phylum
-        <span>{props.singleVirus.phylum}</span>
-      </div>
-      <div>
-        Class
-        <span>{props.singleVirus.class}</span>
-      </div>
-      <div>
-        Order
-        <span>{props.singleVirus.vOrder}</span>
-      </div>
-      <div>
-        Family
-        <span>{props.singleVirus.vFamily}</span>
-      </div>
-      <div>
-        Genus
-        <span>{props.singleVirus.genus}</span>
-      </div>
-      <div>
-        Species
-        <span>{props.singleVirus.species}</span>
-      </div>
-    </div>
-  );
-}
+// function Classification(props: ClassificationProps) {
+//   if (!props.show) {
+//     return null;
+//   }
+//   return (
+//     <div className="classification">
+//       <div>
+//         Realm
+//         <span>{props.singleVirus.realm}</span>
+//       </div>
+//       <div>
+//         Kingdom
+//         <span>{props.singleVirus.kingdom}</span>
+//       </div>
+//       <div>
+//         Phylum
+//         <span>{props.singleVirus.phylum}</span>
+//       </div>
+//       <div>
+//         Class
+//         <span>{props.singleVirus.class}</span>
+//       </div>
+//       <div>
+//         Order
+//         <span>{props.singleVirus.vOrder}</span>
+//       </div>
+//       <div>
+//         Family
+//         <span>{props.singleVirus.vFamily}</span>
+//       </div>
+//       <div>
+//         Genus
+//         <span>{props.singleVirus.genus}</span>
+//       </div>
+//       <div>
+//         Species
+//         <span>{props.singleVirus.species}</span>
+//       </div>
+//     </div>
+//   );
+// }
 
 export default async function SingleVirusPage(props: PageProps) {
   const params = await props.params;
@@ -174,7 +174,7 @@ export default async function SingleVirusPage(props: PageProps) {
         <p>{singleVirus.virusDesc}</p>
       </div>
       {/* <div className="bg-linear-to-b from-black/50 to-[rgba(0, 0, 0, 0.2)] h-10 absolute w-full" /> */}
-      <Recommended />
+      <Recommended id={singleVirus.id} />
     </div>
   );
 }
